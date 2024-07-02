@@ -1,1 +1,0 @@
-# vottun-community-social-wallet

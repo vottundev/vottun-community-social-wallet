@@ -1,0 +1,482 @@
+{
+  "@@last_modified": "2024-06-07T13:20:18.654763",
+  "socialWalletName": "SocialWallet",
+  "@socialWalletName": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "loginText": "Sign In",
+  "@loginText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "signUpText": "Sign Up",
+  "@signUpText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emailText": "Email",
+  "@emailText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "usernameText": "Username",
+  "@usernameText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emailTextInstructions": "Your email",
+  "@emailTextInstructions": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "passwordText": "Password",
+  "@passwordText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "otpCodeLabelText": "OTP Code",
+  "@otpCodeLabelText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "otpCodeHint": "Write OTP code",
+  "@otpCodeHint": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "passwordTextInstructions": "Your password",
+  "@passwordTextInstructions": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "forgottenPassText": "¿Have you forget your password?",
+  "@forgottenPassText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exploreText": "Explorer",
+  "@exploreText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "recoverPassTitle": "Recover your password.",
+  "@recoverPassTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "incorrectCredentialsTitle": "Incorrect username or password",
+  "@incorrectCredentialsTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "backText": "Back",
+  "@backText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "continueText": "Continue",
+  "@continueText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancelText": "Cancel",
+  "@cancelText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "commonErrorMessage": "Something went wrong. Thanks for your patience :)",
+  "@commonErrorMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "totalAmountText": "Total amount",
+  "@totalAmountText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "doneText": "Done",
+  "@doneText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectNetworkText": "Select network",
+  "@selectNetworkText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectCurrencyToDoPayment": "Select currency to do the payment",
+  "@selectCurrencyToDoPayment": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "dirPayBottomLabel": "Dir. Pay",
+  "@dirPayBottomLabel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sharedPayBottomLabel": "Shared Pay",
+  "@sharedPayBottomLabel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "contactsBottomLabel": "Contacts",
+  "@contactsBottomLabel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "dirPayLabel": "Dir. Payment",
+  "@dirPayLabel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "historyLabel": "History",
+  "@historyLabel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "cryptoLabel": "Crypto",
+  "@cryptoLabel": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "amountToSentTitle": "Amount to sent",
+  "@amountToSentTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "amountCannotBeZeroTitle": "Amount cannot be 0",
+  "@amountCannotBeZeroTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exceededWalletBalance": "Exceeded your wallet balance, please add funds",
+  "@exceededWalletBalance": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "createSchedulePaymentText": "Create Shared Payment",
+  "@createSchedulePaymentText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "": "Request Shared Payment",
+  "@requestSharedPaymentText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectRecipientText": "Select recipient",
+  "@selectRecipientText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "activeText": "Active",
+  "@activeText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emptySchedulePayment": "Not created any shared payment yet! :(",
+  "@emptySchedulePayment": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "amountToPay": "Amount to pay",
+  "@amountToPay": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "txDetailsText": "Tx Details",
+  "@txDetailsText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "statusText": "Status",
+  "@statusText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "youHavePayedText": "You have payed",
+  "@youHavePayedText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "numConfirmationsText": "Num confirmations",
+  "@numConfirmationsText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "totalRequiredConfirmations": "Total required confirmations",
+  "@totalRequiredConfirmations": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "approveTransactionText": "Approve Transaction",
+  "@approveTransactionText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "payText": "PAY",
+  "@payText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "executeTx": "Execute Tx",
+  "@executeTx": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exceededTotalAmount": "Exceeded total amount",
+  "@exceededTotalAmount": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "totalAmountCannotBeEmptyMessage": "Total amount cannot be empty",
+  "@totalAmountCannotBeEmptyMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pendingAmountText": "Pending amount",
+  "@pendingAmountText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addUserText": "Add User",
+  "@addUserText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addMyAmountText": "Add my amount",
+  "@addMyAmountText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "startPaymentText": "Start Payment",
+  "@startPaymentText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "introTotalAmountToPayText": "Introduce total amount to pay",
+  "@introTotalAmountToPayText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "proceedText": "Proceed",
+  "@proceedText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "introYourTotalAmountToPayText": "Introduce your total amount to pay",
+  "@introYourTotalAmountToPayText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "yourAmountToPay": "Your amount",
+  "@yourAmountToPay": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "exceededAmountOfWalletMessage": "Exceeded amount of your wallet",
+  "@exceededAmountOfWalletMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "networkText": "Network",
+  "@networkText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "createText": "Create",
+  "@createText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "twoFAValidationCodeText": "2FA Validation code",
+  "@twoFAValidationCodeText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sendVerificationCodeText": "Send Verification Code",
+  "@sendVerificationCodeText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "otpEmailSendSuccessMessage": "Verification code sent to your email",
+  "@otpEmailSendSuccessMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "otpValidationCodeText": "OTP Validation code",
+  "@otpValidationCodeText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "resendText": "Resend",
+  "@resendText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "singleUseCodeMessage": "Remember, this code is for single use only and is valid for 90 seconds.",
+  "@singleUseCodeMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "amountForMessage": "Amount for {contactName}",
+  "@amountForMessage": {
+    "type": "text",
+    "placeholders": {
+      "contactName": {}
+    }
+  },
+  "introAmountForMessage": "Introduce amount for{contactName}",
+  "@introAmountForMessage": {
+    "type": "text",
+    "placeholders": {
+      "contactName": {}
+    }
+  },
+  "requestPaymentToYouMessage": "{ownerUsername} has requested you to PAY {amountToPay} {currencySymbol} (x$). \n\nReason: {currencyName}",
+  "@requestPaymentToYouMessage": {
+    "type": "text",
+    "placeholders": {
+      "ownerUsername": {},
+      "amountToPay": {},
+      "currencySymbol": {},
+      "currencyName": {}
+    }
+  },
+  "requestedPaymentMessage": "Requested {totalAmount} {currencySymbol} (x$) to: {participantsUsername} \n\nReason: {currencyName}",
+  "@requestedPaymentMessage": {
+    "type": "text",
+    "placeholders": {
+      "totalAmount": {},
+      "currencySymbol": {},
+      "participantsUsername": {},
+      "currencyName": {}
+    }
+  },
+  "addContact": "Add Contact",
+  "@addContact": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "searchByHintText": "Search contact by username or email",
+  "@searchByHintText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "contactAlreadyAddedText": "Contact already added",
+  "@contactAlreadyAddedText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "configurationText": "Configuration",
+  "@configurationText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "mainnetEnabledText": "Mainnet enabled",
+  "@mainnetEnabledText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "testnetEnabledText": "Testnet enabled",
+  "@testnetEnabledText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "logOutText": "Log out",
+  "@logOutText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "directPaymentText": "Direct payment",
+  "@directPaymentText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "searchContacts": "Search in contacts",
+  "@searchContacts": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "createWalletFirstMessage": "Create a wallet first",
+  "@createWalletFirstMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectNetworkFirstMessage": "Select a network first",
+  "@selectNetworkFirstMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectContactMessage": "Select a contact first",
+  "@selectContactMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emptyDirectPaymentsMessage": "You don't have any record yet :(",
+  "@emptyDirectPaymentsMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "amountToSendSuccessMessage": "Amount send it!",
+  "@amountToSendSuccessMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "otpAuthenticationTitle": "OTP Authentication",
+  "@otpAuthenticationTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "incorrectOtpCodeMessage": "Incorrect OTP code",
+  "@incorrectOtpCodeMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "otpVerificationText": "OTP Verification",
+  "@otpVerificationText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "requestedToText": "Requested to",
+  "@requestedToText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "requestedAmountToText": "Requested amount",
+  "@requestedAmountToText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "yourContactsText": "Your contacts",
+  "@yourContactsText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sendText": "Send",
+  "@sendText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emptyContactsMessage": "You don't have contacts, add new contact to start doing payments!",
+  "@emptyContactsMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emptyErrorMessage": "Error",
+  "@emptyErrorMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "registerErrorMessage": "Error on register user",
+  "@registerErrorMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "errorText": "Error",
+  "@errorText": {
+    "type": "text",
+    "placeholders": {}
+  }
+}
