@@ -141,8 +141,14 @@ class AppConstants {
   }
   //todo not working if token balance >= 10
     static String toWei(double tokenBalance, int decimals) {
-    EtherAmount result = EtherAmount.fromBase10String(EtherUnit.wei, tokenBalance.toString());
-    return result.toString();
+    double finalResult = 0.0;
+    if (tokenBalance <= 1.0) {
+      finalResult = tokenBalance * pow(10, decimals);
+      return finalResult.round().toString();
+    } else {
+      EtherAmount result = EtherAmount.fromBigInt(EtherUnit.ether, BigInt.from(tokenBalance));
+      return (result.getInEther / BigInt.from(pow(10, decimals))).toString();
+    }
   }
 
   //todo not working if token balance >= 10
