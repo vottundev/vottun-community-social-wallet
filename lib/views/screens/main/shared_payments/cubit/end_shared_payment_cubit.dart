@@ -49,7 +49,7 @@ class EndSharedPaymentCubit extends Cubit<EndSharedPaymentState> {
                     blockchainNetwork: blockchainNetwork,
                     sender: sender,
                     method: "approve",
-                    value: BigInt.from(0),
+                    value: "0",
                     gasLimit: 250000,
                     contractSpecsId: ConfigProps.contractSpecsId,
                     params: params,

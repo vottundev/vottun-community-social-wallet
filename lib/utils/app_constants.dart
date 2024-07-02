@@ -147,7 +147,7 @@ class AppConstants {
       return finalResult.round().toString();
     } else {
       EtherAmount result = EtherAmount.fromBigInt(EtherUnit.ether, BigInt.from(tokenBalance));
-      return (result.getInEther / BigInt.from(pow(10, decimals))).toString();
+      return (result.getInWei / BigInt.from(pow(10, decimals) )).toString();
     }
   }
 

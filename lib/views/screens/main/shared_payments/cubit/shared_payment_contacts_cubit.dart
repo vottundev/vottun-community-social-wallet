@@ -50,7 +50,7 @@ class SharedPaymentContactsCubit extends Cubit<SharedPaymentContactsState> {
             contractSpecsId: ConfigProps.contractSpecsId,
             gasLimit: 250000,
             method: sharedPayment.currencyAddress == null ? "initNativeTransaction" : "initTransaction",
-            value: sharedPayment.currencyAddress == null ? AppConstants.toWei(sharedPayment.totalAmount, 18): BigInt.from(0),
+            value: sharedPayment.currencyAddress == null ? AppConstants.toWei(sharedPayment.totalAmount, 18): "0",
             params: params,
             pin: pin));
         if (sendTxResponseModel != null) {

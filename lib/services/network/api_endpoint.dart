@@ -142,7 +142,6 @@ class ApiEndpoint {
       case ERC721Endpoint.mintNft: return '$path/erc721/mint';
     }
   }
-
 }
 
 enum AuthEndpoint {
