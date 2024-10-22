@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_appauth/flutter_appauth.dart';
-import 'package:flutter_vottun/vottun.dart';
+//import 'package:flutter_vottun/vottun.dart';
 import 'package:get_it/get_it.dart';
 import 'package:social_wallet/api/repositories/auth_repository.dart';
 import 'package:social_wallet/api/repositories/balance_repository.dart';
@@ -77,7 +77,7 @@ void registerDependencyInjection() {
 }
 
 void testingVottunSDK() {
-  Vottun vottun = Vottun("", "");
+ // Vottun vottun = Vottun("", "");
 }
 
 FlutterAppAuth getFlutterAppAuth() {
