@@ -24,23 +24,25 @@ The wallet enables users to create and manage their crypto wallets through Vottu
 
 ## &nbsp;&nbsp;&nbsp;&nbsp;User Interface (Frontend):
 
-Users interact with the Vottun platform through an interface that allows them to connect their wallet using a simple login or sign-up flow via an identity server. Once connected, users can see their available tokens, select a network, and perform payments (both direct and shared) by following intuitive steps.
+&nbsp;&nbsp;&nbsp;&nbsp;Users interact with the Vottun platform through an interface that allows them to connect their wallet using a simple login or sign-up flow via an identity server. Once connected, users can see their available tokens, select a network, and perform payments (both direct and shared) by following intuitive steps.
 
-## Wallet Creation:
+## &nbsp;&nbsp;&nbsp;&nbsp;Wallet Creation:
 
-When a user signs up or logs in, the system automatically creates a wallet using the Vottun API. A hash is generated and passed to Vottun’s Web-based Wallet Creation URL to establish the wallet, allowing immediate use for transactions.
+&nbsp;&nbsp;&nbsp;&nbsp;When a user signs up or logs in, the system automatically creates a wallet using the Vottun API. A hash is generated and passed to Vottun’s Web-based Wallet Creation URL to establish the wallet, allowing immediate use for transactions.
 
-## Contacts Management:
+## &nbsp;&nbsp;&nbsp;&nbsp;Contacts Management:
 
-Users can add or remove contacts linked to their account for easy and quick payments. All contact information is securely stored and managed in the backend.
+&nbsp;&nbsp;&nbsp;&nbsp;Users can add or remove contacts linked to their account for easy and quick payments. All contact information is securely stored and managed in the backend.
 
-## Direct and Shared Payments:
+## &nbsp;&nbsp;&nbsp;&nbsp;Direct and Shared Payments:
 
-Direct Payments allow users to send ERC and native tokens to their contacts using an OTP code for security. Shared Payments allow multiple users to contribute to a single transaction. This is managed by a smart contract on Vottun’s platform, where each user pays their share, and once all participants have paid, the funds are distributed to the recipient.
+&nbsp;&nbsp;&nbsp;&nbsp;Direct Payments allow users to send ERC and native tokens to their contacts using an OTP code for security. Shared Payments allow multiple users to contribute to a single transaction. This is managed by a smart contract on Vottun’s platform, where each user pays their share, and once all participants have paid, the funds are distributed to the recipient.
 
-## Backend Operations:
+## &nbsp;&nbsp;&nbsp;&nbsp;Backend Operations:
 
-The backend is responsible for handling all wallet interactions, including communication with smart contracts, contact management, and transaction history. Payments are processed and validated through the API and written into the SQLite database for future reference.
+&nbsp;&nbsp;&nbsp;&nbsp;The backend is responsible for handling all wallet interactions, including communication with smart contracts, contact management, and transaction history. Payments are processed and validated through the API and written into the SQLite database for future reference.
+---
+# What are we looking for?
 
 ## Objectives
 
