@@ -1,8 +1,5 @@
 # Social Wallet by Vottun S.L
 
-
-## Warning
-
 ## Introduction
 
 This is a mobile app which has 3 main functionalities. The aim is that you, developers, build anything you want but focus on mobile devices using this repository as a base project.
