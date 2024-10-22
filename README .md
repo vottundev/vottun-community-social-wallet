@@ -75,17 +75,17 @@ The main objective of this Open Projects project is to enhance the existing soci
 ## Deliverables:
 The development of the following new features is expected:
 1. **USDT Payments Functionality:**
-- A fully functional wallet interface and backend that allows users to make payments using USDT alongside native tokens.
+   - A fully functional wallet interface and backend that allows users to make payments using USDT alongside native tokens.
 2. **Transaction History Feature:**
-- A front-end interface displaying a transaction history.
-- Backend support for storing and retrieving transaction data accurately.
+   - A front-end interface displaying a transaction history.
+   - Backend support for storing and retrieving transaction data accurately.
 3. **Stellar Network Integration:**
-- Front-end and back-end integration of Stellar, enabling payments using Lumens (XLM).
-- User interface updates to support network selection for Stellar and other supported tokens.
+   - Front-end and back-end integration of Stellar, enabling payments using Lumens (XLM).
+   - User interface updates to support network selection for Stellar and other supported tokens.
 4. **Recurring Payments Feature:**
-- A front-end interface for users to schedule and manage recurring payments.
-- Backend support for tracking payment schedules and processing payments automatically.
-- Smart contract integration to handle the automation of recurring payments.
+   - A front-end interface for users to schedule and manage recurring payments.
+   - Backend support for tracking payment schedules and processing payments automatically.
+   - Smart contract integration to handle the automation of recurring payments.
 
 ## How to Participate in the Vottun Social Wallet Project
 
