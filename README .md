@@ -1,10 +1,7 @@
 # Social Wallet by Vottun S.L
 
 
-
-
 ## Warning
-
 
 ## Introduction
 
@@ -16,6 +13,90 @@ Another point to mention is that the tokens that are currently available are the
 
 To manage **Shared Payments** we have create a smart contract that will manage approvals and payments when it comes to **Shared Payments**.
 Contract supports **ERC20** and **native** tokens. You can find an example of the whole process in this [link](https://www.oklink.com/es-la/amoy/address/0xc44f5508861726198f3fea9aae78462c5d0423c6) 
+
+## Wallet Overview
+
+This wallet project aims to create a versatile social wallet that allows users to manage payments and shared transactions across multiple blockchain networks. The primary goal is to offer a smooth user experience for direct and shared payments, with features such as contact management, network selection, and wallet creation integrated into a cohesive mobile application.
+
+## How does it work
+
+The wallet enables users to create and manage their crypto wallets through Vottun’s API and interact with different blockchain networks for direct and shared payments. Users can log in, manage contacts, and perform payments while having access to payment history and configuration options for different networks.
+
+## User Interface (Frontend):
+
+Users interact with the Vottun platform through an interface that allows them to connect their wallet using a simple login or sign-up flow via an identity server. Once connected, users can see their available tokens, select a network, and perform payments (both direct and shared) by following intuitive steps.
+
+## Wallet Creation:
+
+When a user signs up or logs in, the system automatically creates a wallet using the Vottun API. A hash is generated and passed to Vottun’s Web-based Wallet Creation URL to establish the wallet, allowing immediate use for transactions.
+
+## Contacts Management:
+
+Users can add or remove contacts linked to their account for easy and quick payments. All contact information is securely stored and managed in the backend.
+
+## Direct and Shared Payments:
+
+Direct Payments allow users to send ERC and native tokens to their contacts using an OTP code for security. Shared Payments allow multiple users to contribute to a single transaction. This is managed by a smart contract on Vottun’s platform, where each user pays their share, and once all participants have paid, the funds are distributed to the recipient.
+
+## Backend Operations:
+
+The backend is responsible for handling all wallet interactions, including communication with smart contracts, contact management, and transaction history. Payments are processed and validated through the API and written into the SQLite database for future reference.
+
+## Objectives
+
+The main objective of this Open Projects project is to enhance the existing social wallet by focusing on the following new features: 
+**Which new features we would like to be added:**
+
+1. **Payment with Other Tokens (USDT):** In this phase, the wallet will allow payments not only in the native network token but also with USDT, providing users with more flexibility in their transactions. This involves integrating the option to select USDT in the direct and shared payments processes in the different chains that the applications work on.
+2. **Transaction History:** A new section will be added to the wallet where users can view a detailed history of all transactions, including both direct and shared payments. This will allow users to track their payments easily and have a clear record of past transactions.
+3. **Stellar Network Integration (Lumens):** The wallet will integrate the Stellar network, enabling users to make payments using Lumens (XLM). This will expand the wallet’s functionality by allowing cross-network payments and further enhancing the wallet's versatility.
+4. **Recurring or Scheduled Payments:** A new feature that will allow users to schedule payments at pre-set intervals (e.g., daily, weekly, monthly) or on specific dates. This is useful for automating regular payments such as subscriptions or repetitive transfers.
+
+## Scope of Work
+
+**Frontend Development:**
+
+- **USDT Payments:** Build a user-friendly interface that enables users to select USDT as a payment option, along with the existing native tokens.
+- **Transaction History:** Create a section that displays a clear and concise history of all user transactions, including amounts, timestamps, and token types.
+- **Stellar Integration:** Add Stellar (XLM) support to the network selector, allowing users to toggle between native tokens, ERC20 tokens, and Stellar Lumens.
+- **Recurring Payments:** Develop an interface for users to schedule recurring payments, providing options for frequency (daily, weekly, etc.), token selection, and payment amounts.
+  
+**Backend Development:**
+- **Token Payments & USDT Support:** Implement backend functionality to handle token selection and enable payments in USDT, ensuring smooth transaction flow and validation.
+- **Transaction History Tracking:** Implement a backend system for logging and retrieving transaction records. Ensure accurate data storage using SQLite or another database solution.
+- **Stellar Payments:** Enable communication with the Stellar network for sending and receiving Lumens. Ensure compatibility with the wallet's payment processes.
+- **Recurring Payments Logic:** Set up backend logic to support the automation of recurring payments, including tracking schedules and processing transactions at defined intervals.
+
+**Smart Contract Development & Integration:**
+- **USDT Payments:** Update the existing smart contracts to handle payments in USDT, ensuring proper integration with the wallet’s payment flows.
+- **Stellar Compatibility:** Ensure smart contracts are compatible with Stellar’s Lumens for payment transactions.
+- **Recurring Payments:** Update the smart contracts to handle recurring payments, ensuring that funds are deducted automatically based on the user-defined schedule.
+
+## Deliverables:
+The development of the following new features is expected:
+1. **USDT Payments Functionality:**
+- A fully functional wallet interface and backend that allows users to make payments using USDT alongside native tokens.
+2. **Transaction History Feature:**
+- A front-end interface displaying a transaction history.
+- Backend support for storing and retrieving transaction data accurately.
+3. **Stellar Network Integration:**
+- Front-end and back-end integration of Stellar, enabling payments using Lumens (XLM).
+- User interface updates to support network selection for Stellar and other supported tokens.
+4. **Recurring Payments Feature:**
+- A front-end interface for users to schedule and manage recurring payments.
+- Backend support for tracking payment schedules and processing payments automatically.
+- Smart contract integration to handle the automation of recurring payments.
+
+## How to Participate in the Vottun Social Wallet Project
+
+To start contributing to the Vottun Social Wallet project, follow these steps:
+
+1. **Fork the repository:** Create a personal copy of the project repo to work on.
+2. **Work on one or more deliverables:** Focus on developing the defined features or improvements.
+3. **Submit a pull request (PR):** Once your development is complete, submit a PR for evaluation.
+4. **Cooperate!:** You may need to collaborate with other contributors for different parts of the project.
+5. **Approval process:** If approved, your code will be merged into the main project repository.
+6. **Receive rewards:** Based on the established conditions and milestones, you will receive the agreed rewards upon successful contribution.
 
 ## SQLite
 
