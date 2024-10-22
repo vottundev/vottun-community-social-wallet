@@ -22,7 +22,7 @@ This wallet project aims to create a versatile social wallet that allows users t
 
 The wallet enables users to create and manage their crypto wallets through Vottun’s API and interact with different blockchain networks for direct and shared payments. Users can log in, manage contacts, and perform payments while having access to payment history and configuration options for different networks.
 
-## User Interface (Frontend):
+## &nbsp;&nbsp;User Interface (Frontend):
 
 Users interact with the Vottun platform through an interface that allows them to connect their wallet using a simple login or sign-up flow via an identity server. Once connected, users can see their available tokens, select a network, and perform payments (both direct and shared) by following intuitive steps.
 
