@@ -1,4 +1,4 @@
-# Social Wallet by Vottun
+# Social Wallet
 
 ## Introduction
 
