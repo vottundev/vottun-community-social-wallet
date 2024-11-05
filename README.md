@@ -1,4 +1,4 @@
-# Social Wallet by Vottun S.L
+# Social Wallet by Vottun
 
 ## Introduction
 
