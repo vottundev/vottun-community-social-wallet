@@ -51,7 +51,7 @@ class _WalletScreenState extends State<WalletScreen> with WidgetsBindingObserver
                         children: [
                           Expanded(
                             child: Text(
-                              "0\$",
+                              "0€",
                               textAlign: TextAlign.center,
                               maxLines: 1,
                               style: context.bodyTextMedium.copyWith(fontSize: 50, fontWeight: FontWeight.w500),
@@ -110,12 +110,13 @@ class _WalletScreenState extends State<WalletScreen> with WidgetsBindingObserver
                   elevation: 3,
                   onTap: () async {
                     WalletHashResponseModel? response = await getWalletCubit().createWallet();
+
                     if (response != null) {
                       if (mounted) {
                         AppConstants.showBottomDialog(
                             context: context,
                             isScrollControlled: true,
-                            enableDrag: false,
+                            heightBoxConstraintRate: 0.95,
                             body: CreateWalletWebViewBottomDialog(
                               username: getKeyValueStorage().getCurrentUser()?.userEmail ?? "",
                               hash: response.hash,

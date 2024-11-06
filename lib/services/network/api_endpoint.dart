@@ -119,7 +119,7 @@ class ApiEndpoint {
     var txPath = corePath;
     switch (endpoint) {
       case CustodiedWalletEndpoint.getNewHash: return '$path/hash/new';
-      case CustodiedWalletEndpoint.getCustodiedWallets: return '$path/evm/wallet/custodied/list?o=0&n=100';
+      case CustodiedWalletEndpoint.getCustodiedWallets: return '$path/evm/wallet/custodied/list';
       case CustodiedWalletEndpoint.sendTransaction: return '$txPath/wallet/custodied/transact/mutable?strategy=$strategy';
       case CustodiedWalletEndpoint.sendOTP: return '$path/2fa/signature/otp/new?email=$userEmail';
       case CustodiedWalletEndpoint.sendTxFromCustodiedWallet: return '$txPath/wallet/custodied/transfer?strategy=$strategy';
@@ -142,6 +142,7 @@ class ApiEndpoint {
       case ERC721Endpoint.mintNft: return '$path/erc721/mint';
     }
   }
+
 }
 
 enum AuthEndpoint {

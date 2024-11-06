@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_scroll_shadow/flutter_scroll_shadow.dart';
@@ -9,6 +10,7 @@ import 'package:social_wallet/views/screens/main/contacts/cubit/user_contact_cub
 import '../../utils/app_colors.dart';
 import '../../utils/app_constants.dart';
 
+
 class SelectContactsBottomDialog extends StatefulWidget {
 
   bool? isShowedAddUserButton;
@@ -18,20 +20,23 @@ class SelectContactsBottomDialog extends StatefulWidget {
   Function()? onClickBottomButton;
   Function(int userId, String contactName, String? address) onClickContact;
 
-  SelectContactsBottomDialog(
-      {super.key,
-      required this.onClickContact,
-      this.onClickBottomButton,
-      this.bottomButtonText,
-      this.excludedId,
-      this.title,
-      this.isShowedAddUserButton});
+  SelectContactsBottomDialog({super.key, 
+    required this.onClickContact,
+    this.onClickBottomButton,
+    this.bottomButtonText,
+    this.excludedId,
+    this.title,
+    this.isShowedAddUserButton
+  });
 
   @override
   _SelectContactsBottomDialogState createState() => _SelectContactsBottomDialogState();
 }
 
-class _SelectContactsBottomDialogState extends State<SelectContactsBottomDialog> with WidgetsBindingObserver {
+class _SelectContactsBottomDialogState extends State<SelectContactsBottomDialog>
+    with WidgetsBindingObserver {
+
+
   @override
   Widget build(BuildContext context) {
     getUserContactCubit().getUserContacts(excludedId: widget.excludedId);
@@ -46,10 +51,13 @@ class _SelectContactsBottomDialogState extends State<SelectContactsBottomDialog>
               Expanded(
                 flex: 2,
                 child: Text(
-                  widget.title ?? getStrings().yourContactsText,
+                  widget.title ?? "Your contacts",
                   maxLines: 1,
                   textAlign: TextAlign.start,
-                  style: context.bodyTextMedium.copyWith(fontSize: 20, fontWeight: FontWeight.w700),
+                  style: context.bodyTextMedium.copyWith(
+                      fontSize: 20,
+                      fontWeight: FontWeight.w700
+                  ),
                 ),
               ),
               Expanded(
@@ -57,9 +65,14 @@ class _SelectContactsBottomDialogState extends State<SelectContactsBottomDialog>
                   onPressed: () {
                     AppRouter.pop();
                   },
-                  child: Text(getStrings().doneText,
+                  child: Text(
+                      "Done",
                       textAlign: TextAlign.end,
-                      style: context.bodyTextMedium.copyWith(fontSize: 20, color: Colors.blue)),
+                      style: context.bodyTextMedium.copyWith(
+                          fontSize: 20,
+                          color: Colors.blue
+                      )
+                  ),
                 ),
               )
             ],
@@ -75,10 +88,14 @@ class _SelectContactsBottomDialogState extends State<SelectContactsBottomDialog>
                   children: [
                     Expanded(
                       child: Center(
-                        child: Text(
-                          getStrings().emptyContactsMessage,
-                          textAlign: TextAlign.center,
-                          style: context.bodyTextMedium.copyWith(fontSize: 18),
+                        child: Container(
+                          child: Text(
+                            "You don't have contacts, add new contact to start doing payments!",
+                            textAlign: TextAlign.center,
+                            style: context.bodyTextMedium.copyWith(
+                                fontSize: 18
+                            ),
+                          ),
                         ),
                       ),
                     ),
@@ -93,63 +110,68 @@ class _SelectContactsBottomDialogState extends State<SelectContactsBottomDialog>
                   ScrollShadow(
                     child: SingleChildScrollView(
                       child: Column(
-                          children: state.userContactList!
-                              .map((e) => InkWell(
-                                    onTap: () {
-                                      AppRouter.pop();
-                                      widget.onClickContact(e.id ?? 0, e.username, e.address);
-                                    },
-                                    child: Padding(
-                                      padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 5),
-                                      child: Row(
-                                        children: [
-                                          Container(
-                                            decoration: BoxDecoration(
-                                                border: Border.all(color: AppColors.primaryColor),
-                                                borderRadius: BorderRadius.circular(50)),
-                                            child: ClipRRect(
-                                              borderRadius: BorderRadius.circular(50.0),
-                                              //make border radius more than 50% of square height & width
-                                              child: Image.asset(
-                                                "assets/nano.jpg",
-                                                height: 32.0,
-                                                width: 32.0,
-                                                fit: BoxFit.cover, //change image fill type
+                          children: state.userContactList!.map((e) =>
+                              InkWell(
+                                onTap: () {
+                                  AppRouter.pop();
+                                  widget.onClickContact(e.id ?? 0, e.username, e.address);
+                                },
+                                child: Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 8.0, vertical: 5),
+                                  child: Row(
+                                    children: [
+                                      Container(
+                                        decoration: BoxDecoration(
+                                            border: Border.all(color: AppColors.primaryColor),
+                                            borderRadius: BorderRadius.circular(50)
+                                        ),
+                                        child: ClipRRect(
+                                          borderRadius: BorderRadius.circular(50.0),
+                                          //make border radius more than 50% of square height & width
+                                          child: Image.asset(
+                                            "assets/nano.jpg",
+                                            height: 32.0,
+                                            width: 32.0,
+                                            fit: BoxFit.cover, //change image fill type
+                                          ),
+                                        ),
+                                      ),
+                                      const SizedBox(width: 10),
+                                      Expanded(
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              e.username ?? "",
+                                              maxLines: 1,
+                                              style: context.bodyTextMedium.copyWith(
+                                                  fontSize: 16,
+                                                  overflow: TextOverflow.ellipsis,
+                                                  fontWeight: FontWeight.w500
                                               ),
                                             ),
-                                          ),
-                                          const SizedBox(width: 10),
-                                          Expanded(
-                                            child: Column(
-                                              crossAxisAlignment: CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  e.username,
-                                                  maxLines: 1,
-                                                  style: context.bodyTextMedium.copyWith(
-                                                      fontSize: 16,
-                                                      overflow: TextOverflow.ellipsis,
-                                                      fontWeight: FontWeight.w500),
+                                            if (AppConstants.trimAddress(address: e.address).isNotEmpty) ...[
+                                              Text(
+                                                AppConstants.trimAddress(address: e.address),
+                                                maxLines: 1,
+                                                style: context.bodyTextMedium.copyWith(
+                                                    fontSize: 16,
+                                                    overflow: TextOverflow.ellipsis,
+                                                    color: Colors.grey,
+                                                    fontWeight: FontWeight.w500
                                                 ),
-                                                if (AppConstants.trimAddress(address: e.address).isNotEmpty) ...[
-                                                  Text(
-                                                    AppConstants.trimAddress(address: e.address),
-                                                    maxLines: 1,
-                                                    style: context.bodyTextMedium.copyWith(
-                                                        fontSize: 16,
-                                                        overflow: TextOverflow.ellipsis,
-                                                        color: Colors.grey,
-                                                        fontWeight: FontWeight.w500),
-                                                  ),
-                                                ]
-                                              ],
-                                            ),
-                                          ),
-                                        ],
+                                              ),
+                                            ]
+
+                                          ],
+                                        ),
                                       ),
-                                    ),
-                                  ))
-                              .toList()),
+                                    ],
+                                  ),
+                                ),
+                              )
+                          ).toList()
+                      ),
                     ),
                   ),
                   Visibility(
@@ -166,9 +188,14 @@ class _SelectContactsBottomDialogState extends State<SelectContactsBottomDialog>
                                   widget.onClickBottomButton!();
                                 }
                               },
-                              child: Text(widget.bottomButtonText ?? "",
+                              child: Text(
+                                  widget.bottomButtonText ?? "",
                                   textAlign: TextAlign.end,
-                                  style: context.bodyTextMedium.copyWith(fontSize: 20, color: Colors.blue)),
+                                  style: context.bodyTextMedium.copyWith(
+                                      fontSize: 20,
+                                      color: Colors.blue
+                                  )
+                              ),
                             ),
                           )
                         ],
@@ -188,4 +215,5 @@ class _SelectContactsBottomDialogState extends State<SelectContactsBottomDialog>
   void dispose() {
     super.dispose();
   }
+
 }

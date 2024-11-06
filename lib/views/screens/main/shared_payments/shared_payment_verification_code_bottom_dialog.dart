@@ -44,7 +44,7 @@ class SharedPaymentVerificationCodeBottomDialog extends StatelessWidget {
                       children: [
                         Expanded(
                             child: Text(
-                              getStrings().otpVerificationText,
+                              "OTP Verification",
                               maxLines: 1,
                               textAlign: TextAlign.center,
                               style: context.bodyTextLarge.copyWith(
@@ -59,7 +59,7 @@ class SharedPaymentVerificationCodeBottomDialog extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Text(
-                            "${getStrings().requestedToText}: ",
+                            "Requested to: ",
                             maxLines: 1,
                             style: context.bodyTextLarge.copyWith(
                                 fontWeight: FontWeight.w600,
@@ -83,7 +83,7 @@ class SharedPaymentVerificationCodeBottomDialog extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Text(
-                            "${getStrings().requestedAmountToText}: ",
+                            "Requested amount: ",
                             maxLines: 1,
                             style: context.bodyTextLarge.copyWith(
                                 fontWeight: FontWeight.w600,
@@ -106,7 +106,7 @@ class SharedPaymentVerificationCodeBottomDialog extends StatelessWidget {
                       children: [
                         Expanded(
                           child: Text(
-                            "${getStrings().networkText}: ",
+                            "Network: ",
                             maxLines: 1,
                             style: context.bodyTextLarge.copyWith(
                                 fontWeight: FontWeight.w600,
@@ -148,7 +148,7 @@ class SharedPaymentVerificationCodeBottomDialog extends StatelessWidget {
                         onPressed: () {
                           AppRouter.pop();
                         },
-                        child: Text(getStrings().cancelText,
+                        child: Text("Cancelar",
                             textAlign: TextAlign.end,
                             style: context.bodyTextMedium
                                 .copyWith(fontSize: 18, color: Colors.blue)),
@@ -163,7 +163,7 @@ class SharedPaymentVerificationCodeBottomDialog extends StatelessWidget {
                       children: [
                         Expanded(
                           child: CustomButton(
-                            buttonText: getStrings().createText,
+                            buttonText: "Create",
                             radius: 10,
                             enabled: state.isEnabled,
                             elevation: 0,

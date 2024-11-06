@@ -33,7 +33,7 @@ class VerificationCodeComponent extends StatelessWidget {
               Row(
                 children: [
                   Text(
-                    "${getStrings().twoFAValidationCodeText}: ",
+                    "2FA Validation code: ",
                     maxLines: 1,
                     style: context.bodyTextLarge.copyWith(
                         fontWeight: FontWeight.w600,
@@ -61,7 +61,7 @@ class VerificationCodeComponent extends StatelessWidget {
                   children: [
                     Expanded(
                       child: CustomButton(
-                          buttonText: getStrings().sendVerificationCodeText,
+                          buttonText: "Send Verification Code",
                           radius: 10,
                           backgroundColor: Colors.green,
                           onTap: () async {
@@ -72,7 +72,7 @@ class VerificationCodeComponent extends StatelessWidget {
                               if (onOTPCodeSent != null) {
                                 onOTPCodeSent!(response);
                               }
-                              AppConstants.showToast(context, getStrings().otpEmailSendSuccessMessage);
+                              AppConstants.showToast(context, "We have send a code to your email");
                             }
                           }),
                     ),
@@ -82,7 +82,7 @@ class VerificationCodeComponent extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      "${getStrings().otpValidationCodeText}: ",
+                      "OTP Validation code: ",
                       maxLines: 1,
                       style: context.bodyTextLarge.copyWith(
                           fontWeight: FontWeight.w600,
@@ -117,13 +117,13 @@ class VerificationCodeComponent extends StatelessWidget {
 
                               String? response = await cubit.sendOTP(currUser?.userEmail ?? '', isResend: true);
                               if (response != null && context.mounted) {
-                                AppConstants.showToast(context, getStrings().otpEmailSendSuccessMessage);
+                                AppConstants.showToast(context, "Verification code sent to your email");
                                 if (onResendedCode != null) {
                                   onResendedCode!(response);
                                 }
                               }
                             },
-                            child: Text(getStrings().resendText)
+                            child: Text("Resend")
                         ),
                       )
                     ],
@@ -133,7 +133,7 @@ class VerificationCodeComponent extends StatelessWidget {
                     children: [
                       Expanded(
                         child: Text(
-                          getStrings().singleUseCodeMessage,
+                          "Remember, this code is for single use only and is valid for 90 seconds.",
                           maxLines: 5,
                           textAlign: TextAlign.center,
                           style: context.bodyTextSmall.copyWith(

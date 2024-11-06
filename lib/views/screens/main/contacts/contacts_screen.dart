@@ -42,7 +42,7 @@ class _ContactsScreenState extends State<ContactsScreen> with WidgetsBindingObse
                         Expanded(
                           child: Center(
                             child: Text(
-                              getStrings().emptyContactsMessage,
+                              "You don't have contacts, add new contact to start doing payments!",
                               textAlign: TextAlign.center,
                               style: context.bodyTextMedium.copyWith(fontSize: 18),
                             ),
@@ -96,7 +96,7 @@ class _ContactsScreenState extends State<ContactsScreen> with WidgetsBindingObse
       children: [
         Expanded(
           child: CustomButton(
-            buttonText: getStrings().addContact,
+            buttonText: "Add Contact",
             radius: 15,
             padding: const EdgeInsets.symmetric(vertical: 10),
             onTap: () {

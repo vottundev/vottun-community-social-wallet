@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:social_wallet/models/db/shared_payment.dart';
-import 'package:social_wallet/models/network_info_model.dart';
 import 'package:social_wallet/utils/app_constants.dart';
 import 'package:social_wallet/utils/helpers/extensions/context_extensions.dart';
 import 'package:social_wallet/utils/helpers/extensions/string_extensions.dart';
@@ -14,11 +13,9 @@ import '../../../../routes/routes.dart';
 import '../wallet/cubit/balance_cubit.dart';
 
 class CreateSharedPaymentBottomDialog extends StatelessWidget {
-
   BalanceCubit balanceCubit = getBalanceCubit();
   String userAddressTo;
   int? userId;
-  NetworkInfoModel? networkInfoModel;
   Function() onBackFromCreateDialog;
 
   CreateSharedPaymentBottomDialog({
@@ -36,9 +33,9 @@ class CreateSharedPaymentBottomDialog extends StatelessWidget {
         length: 1,
         child: Column(
           children: [
-            TabBar(
+            const TabBar(
               tabs: [
-                Tab(text: getStrings().cryptoLabel),
+                Tab(text: "Crypto"),
               ],
             ),
             Expanded(
@@ -52,7 +49,7 @@ class CreateSharedPaymentBottomDialog extends StatelessWidget {
                         children: [
                           Expanded(
                             child: Text(
-                              getStrings().selectCurrencyToDoPayment,
+                              "Select currency to do the payment",
                               textAlign: TextAlign.center,
                               style: context.bodyTextMedium.copyWith(fontSize: 16, fontWeight: FontWeight.w700),
                             ),
@@ -62,10 +59,7 @@ class CreateSharedPaymentBottomDialog extends StatelessWidget {
                       const SizedBox(height: 15),
                       Expanded(
                         child: NetworkSelector(
-                          selectedNetworkInfoModel: networkInfoModel,
-                          onClickNetwork: (selectedNetwork) {
-                            networkInfoModel = selectedNetwork;
-                          },
+                          selectedNetworkInfoModel: null,
                           onClickToken: (tokenInfo) async {
                             User? currUser = AppConstants.getCurrentUser();
                             if (userId != null) {
@@ -111,7 +105,7 @@ class CreateSharedPaymentBottomDialog extends StatelessWidget {
                       AppRouter.pop();
                     },
                     child: Text(
-                        getStrings().cancelText,
+                        "Cancelar",
                         textAlign: TextAlign.end,
                         style: context.bodyTextMedium.copyWith(
                             fontSize: 20,

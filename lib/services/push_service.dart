@@ -33,6 +33,7 @@ class PushService {
       String? token = await FirebaseMessaging.instance.getToken();
       if (token != null) {
         //await getAuthCubit().updateUserFCMToken(token);
+        print(token);
       }
     } else {
       print('User declined or has not accepted permission');

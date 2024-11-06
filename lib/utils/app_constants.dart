@@ -10,7 +10,6 @@ import 'package:social_wallet/models/allowance_response_model.dart';
 import 'package:social_wallet/models/db/shared_payment_response_model.dart';
 import 'package:social_wallet/models/db/shared_payment_users.dart';
 import 'package:social_wallet/models/enum_shared_payment_status.dart';
-import 'package:web3dart/web3dart.dart';
 
 import '../di/injector.dart';
 import '../models/db/user.dart';
@@ -32,7 +31,7 @@ class AppConstants {
   //todo pending check actions for use email already registered in vottun service
   static const String testEmail = "test_srs_19@yopmail.com";
   static const String testUsername = "test_srs_19";
-  static const String testPassword = "Doonamis.2022!";
+  static const String testPassword = "qeBsuw!-7vqjki-tovq8s";
 
   static String getCreateWalletUrl({required String hash, required String username}) {
     return "https://wallet.vottun.io/?hash=$hash&username=$username";
@@ -75,19 +74,18 @@ class AppConstants {
     required BuildContext context,
     required Widget body,
     bool? enableDrag,
-    bool isScrollControlled = false,
+    bool? isScrollControlled,
     double? heightBoxConstraintRate
   }) {
     showModalBottomSheet(
         context: context,
-        isScrollControlled: isScrollControlled,
-        enableDrag: enableDrag ?? true,
+        isScrollControlled: false,
+        enableDrag: enableDrag ?? false,
         //constraints: AppConstants.getHeightBoxConstraintForModalBottomSheet(context, value: heightBoxConstraintRate ?? 0.75),
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(top: Radius.circular(13)),
         ),
         backgroundColor: AppColors.bottomDialogBackgroundColor,
-        useSafeArea: true,
         builder: (context) {
           return Scaffold(
               resizeToAvoidBottomInset: true,
@@ -135,26 +133,9 @@ class AppConstants {
   }
 
   //todo not working if token balance >= 10
-  static num toWei2(double tokenBalance, int decimals) {
+  static num toWei(double tokenBalance, int decimals) {
     num result = tokenBalance * pow(10, decimals);
-    return result;
-  }
-  //todo not working if token balance >= 10
-    static String toWei(double tokenBalance, int decimals) {
-    double finalResult = 0.0;
-    if (tokenBalance <= 1.0) {
-      finalResult = tokenBalance * pow(10, decimals);
-      return finalResult.round().toString();
-    } else {
-      EtherAmount result = EtherAmount.fromBigInt(EtherUnit.ether, BigInt.from(tokenBalance));
-      return (result.getInWei / BigInt.from(pow(10, decimals) )).toString();
-    }
-  }
-
-  //todo not working if token balance >= 10
-  static String toWeiString(String tokenBalance, int decimals) {
-    EtherAmount result = EtherAmount.fromBase10String(EtherUnit.wei, tokenBalance.toString());
-    return result.toString();
+    return result.round();
   }
 
   static String parseTokenBalance(String tokenBalance, int decimals) {
@@ -224,7 +205,7 @@ class AppConstants {
         return ESharedPaymentStatus.PAY.name;
       }
       if (allowanceResponseModel != null && sharedPayment.sharedPayment.tokenDecimals != null) {
-        if (allowanceResponseModel.allowance >= num.parse(AppConstants.toWei(sharedPaymentUsers?.userAmountToPay ?? 0.0, sharedPayment.sharedPayment.tokenDecimals!).toString())) {
+        if (allowanceResponseModel.allowance >= AppConstants.toWei(sharedPaymentUsers?.userAmountToPay ?? 0.0, sharedPayment.sharedPayment.tokenDecimals!)) {
           return ESharedPaymentStatus.PAY.name;
         }
       }
@@ -287,4 +268,29 @@ class AppConstants {
     }
     return Colors.red;
   }
+
+  Widget getTextWidgetAsLink() {
+    return Container();
+  }
+
+  /*static void openAppInStore({
+    required bool isAndroid,
+    required String packageName,
+    required String appStoreId
+  }) {
+    if (isAndroid) {
+      OpenStore.instance.open(
+        androidAppBundleId: packageName,
+      );
+    } else {
+      final url = Uri.parse(
+        "https://apps.apple.com/es/app/id$appStoreId"
+      );
+      launchUrl(url, mode: LaunchMode.externalApplication);
+    }
+  }
+
+  static double getToolbarSize() {
+    return 110;
+  }*/
 }

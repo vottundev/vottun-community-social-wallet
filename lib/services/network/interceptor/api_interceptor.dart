@@ -37,11 +37,7 @@ class ApiInterceptor extends QueuedInterceptorsWrapper {
     if (options.headers.containsKey('requiresAuthToken')) {
       if (options.headers['requiresAuthToken'] == true) {
         //check expiration date of the access token associated to the user
-        options.headers.addAll(<String, Object?>{
-          'Authorization': 'Bearer ${ConfigProps.apiKeyMainnetTestnet}',
-          'x-application-vkn': ConfigProps.vottunAppId
-        });
-        /*String accessToken = await getKeyValueStorage().getToken();
+        String accessToken = await getKeyValueStorage().getToken();
         if (accessToken.isNotEmpty) {
           DateTime accessTokenExpirationDate =
               JwtDecoder.getExpirationDate(accessToken);
@@ -71,7 +67,7 @@ class ApiInterceptor extends QueuedInterceptorsWrapper {
             'x-application-vkn': ConfigProps.vottunAppId
           });
 
-        }*/
+        }
       } else {
         options.headers.remove('requiresAuthToken');
       }

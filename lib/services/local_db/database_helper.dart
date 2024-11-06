@@ -62,17 +62,45 @@ class DatabaseHelper {
     List<CustodiedWalletsInfoResponse>? prevCustomers =
         await getWalletCubit().getCustomerCustiodedWallets();
     String insertQuery = "";
+    String insertSharedPayment =
+        "INSERT INTO UserContact(id, vottunId, userId, email, username, address) VALUES ";
+    String insertSharedPaymentUsers =
+        "INSERT INTO UserContact(id, vottunId, userId, email, username, address) VALUES ";
+    String insertContactsQuery =
+        'INSERT INTO UserContact(id, vottunId, userId, email, username, address) VALUES ';
     if (prevCustomers != null) {
       if (prevCustomers.isNotEmpty) {
         insertQuery =
             'INSERT INTO Users(id, vottunId, strategy, userEmail, username, password, accountHash, creationTimestamp) VALUES ';
 
         String valuesList = "";
-
+        String valuesContactsList = "";
         for (var element in prevCustomers) {
           valuesList +=
               '(NULL, "${element.id}",${element.strategy}, "${element.userEmail}", "${element.userEmail.split("@")[0]}", "Doonamis.2022!", "${element.accountHash}", ${element.creationTimestamp}),';
         }
+
+        valuesContactsList +=
+            '(2, "${prevCustomers[1].id}", 19, "${prevCustomers[1].userEmail}", "${prevCustomers[1].userEmail.split("@")[0]}", "${prevCustomers[1].accountHash}"),';
+        valuesContactsList +=
+            '(3, "${prevCustomers[2].id}", 19, "${prevCustomers[2].userEmail}", "${prevCustomers[2].userEmail.split("@")[0]}", "${prevCustomers[2].accountHash}"),';
+        valuesContactsList +=
+            '(4, "${prevCustomers[3].id}", 11, "${prevCustomers[3].userEmail}", "${prevCustomers[3].userEmail.split("@")[0]}", "${prevCustomers[3].accountHash}"),';
+        valuesContactsList +=
+            '(5, "${prevCustomers[4].id}", 19, "${prevCustomers[4].userEmail}", "${prevCustomers[4].userEmail.split("@")[0]}", "${prevCustomers[4].accountHash}"),';
+        valuesContactsList +=
+            '(6, "${prevCustomers[5].id}", 19, "${prevCustomers[5].userEmail}", "${prevCustomers[5].userEmail.split("@")[0]}", "${prevCustomers[5].accountHash}"),';
+
+        valuesContactsList +=
+            '(2, "${prevCustomers[1].id}", 3, "${prevCustomers[1].userEmail}", "${prevCustomers[1].userEmail.split("@")[0]}", "${prevCustomers[1].accountHash}"),';
+        valuesContactsList +=
+            '(4, "${prevCustomers[3].id}", 3, "${prevCustomers[3].userEmail}", "${prevCustomers[3].userEmail.split("@")[0]}", "${prevCustomers[3].accountHash}"),';
+        valuesContactsList +=
+            '(5, "${prevCustomers[4].id}", 3, "${prevCustomers[4].userEmail}", "${prevCustomers[4].userEmail.split("@")[0]}", "${prevCustomers[4].accountHash}"),';
+        valuesContactsList +=
+            '(6, "${prevCustomers[5].id}", 3, "${prevCustomers[5].userEmail}", "${prevCustomers[5].userEmail.split("@")[0]}", "${prevCustomers[5].accountHash}"),';
+        valuesContactsList +=
+            '(11, "${prevCustomers[10].id}", 3, "${prevCustomers[10].userEmail}", "${prevCustomers[10].userEmail.split("@")[0]}", "${prevCustomers[10].accountHash}"),';
 
         if (valuesList.isNotEmpty) {
           insertQuery = insertQuery + valuesList;
@@ -81,6 +109,15 @@ class DatabaseHelper {
         } else {
           //todo no results
           insertQuery = "";
+        }
+        if (valuesContactsList.isNotEmpty) {
+          insertContactsQuery = insertContactsQuery + valuesContactsList;
+          //remove last comma, if not throws error
+          insertContactsQuery =
+              insertContactsQuery.substring(0, insertContactsQuery.length - 1);
+        } else {
+          //todo no results
+          insertContactsQuery = "";
         }
       }
     }
@@ -124,16 +161,15 @@ class DatabaseHelper {
             '(NULL, "", 0, "test_srs_23@yopmail.com", "test_srs_23", "Doonamis.2022!", "0x84fa37c1b4d9dbc87707e47440eae5285edd8e58", 1702426072000),'
             '(NULL, "", 0, "test_srs_24@yopmail.com", "test_srs_24", "Doonamis.2022!", "0x84fa37c1b4d9dbc87707e47440eae5285edd8e58", 1702426072000),'
             '(NULL, "", 0, "test_srs_25@yopmail.com", "test_srs_25", "Doonamis.2022!", "0x84fa37c1b4d9dbc87707e47440eae5285edd8e58", 1702426072000)');
+
+    await database.execute(
+      insertContactsQuery,
+    );
   }
 
-  Future<int?> insertUser(User user) async {
-    try {
-      int result = await db.insert('users', user.toJson());
-      return result;
-    } catch (exception) {
-      print(exception);
-      return null;
-    }
+  Future<int> insertUser(User user) async {
+    int result = await db.insert('users', user.toJson());
+    return result;
   }
 
   Future<int?> insertUserContact(UserContact userContact) async {

@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:social_wallet/api/repositories/alchemy_repository.dart';
 import 'package:social_wallet/api/repositories/balance_repository.dart';
 import 'package:social_wallet/api/repositories/wallet_repository.dart';
 import 'package:social_wallet/di/injector.dart';
@@ -13,10 +14,12 @@ class WalletNFTsCubit extends Cubit<WalletNFTsState> {
 
   BalanceRepository balanceRepository;
   WalletRepository walletRepository;
+  AlchemyRepository alchemyRepository;
 
   WalletNFTsCubit({
     required this.balanceRepository,
-    required this.walletRepository
+    required this.walletRepository,
+    required this.alchemyRepository
   }) : super(WalletNFTsState());
 
 
@@ -30,8 +33,11 @@ class WalletNFTsCubit extends Cubit<WalletNFTsState> {
     ));
     try {
       String? currUserAddress = getKeyValueStorage().getUserAddress() ?? "";
-
-      /*if (response != null) {
+      OwnedNFTsResponse? response = await alchemyRepository.getAccountNFTs(
+          ownerAddress: currUserAddress,
+          networkId: networkId
+      );
+      if (response != null) {
         state.selectedInfoNetwork = selectedNetworkInfo;
        emit(state.copyWith(
          ownedNFTsList: response.ownedNfts,
@@ -42,7 +48,7 @@ class WalletNFTsCubit extends Cubit<WalletNFTsState> {
             ownedNFTsList: [],
             status: WalletNFTsStatus.success
         ));
-      }*/
+      }
     } catch (error) {
       print(error);
       emit(state.copyWith(

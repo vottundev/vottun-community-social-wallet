@@ -49,7 +49,7 @@ class EndSharedPaymentCubit extends Cubit<EndSharedPaymentState> {
                     blockchainNetwork: blockchainNetwork,
                     sender: sender,
                     method: "approve",
-                    value: "0",
+                    value: 0,
                     gasLimit: 250000,
                     contractSpecsId: ConfigProps.contractSpecsId,
                     params: params,
@@ -111,7 +111,7 @@ class EndSharedPaymentCubit extends Cubit<EndSharedPaymentState> {
     User? currUser = AppConstants.getCurrentUser();
     List<dynamic> params = List.empty(growable: true);
     String methodName = "";
-    String value = "0";
+    num value = 0;
 
     if (sharedPaymentResponseModel.sharedPayment.currencyAddress != null) {
       methodName = "submitSharedPayment";
@@ -136,7 +136,6 @@ class EndSharedPaymentCubit extends Cubit<EndSharedPaymentState> {
                 sender: getKeyValueStorage().getUserAddress() ?? "",
                 blockchainNetwork: sharedPaymentResponseModel.sharedPayment.networkId,
                 value: value,
-                gasLimit: 250000,
                 contractSpecsId: ConfigProps.contractSpecsId,
                 contractAddress: ConfigProps.sharedPaymentCreatorAddress,
                 method: methodName,

@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:social_wallet/di/injector.dart';
 import 'package:social_wallet/models/currency_model.dart';
 import 'package:social_wallet/routes/app_router.dart';
 import 'package:social_wallet/utils/helpers/extensions/context_extensions.dart';
@@ -52,7 +51,7 @@ class _SelectCurrencyBottomDialogState extends State<SelectCurrencyBottomDialog>
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    getStrings().selectCurrencyToDoPayment,
+                    "Select currency to do the payment",
                     style: context.bodyTextMedium.copyWith(
                         fontSize: 18,
                         fontWeight: FontWeight.w700
@@ -75,7 +74,7 @@ class _SelectCurrencyBottomDialogState extends State<SelectCurrencyBottomDialog>
                       widget.onClickCurrency(e);
                       AppRouter.pop();
                     } else {
-                      AppConstants.showToast(context, getStrings().createWalletFirstMessage);
+                      AppConstants.showToast(context, "Create a wallet first");
                     }
                   },
                   child: Padding(

@@ -40,7 +40,7 @@ class _AddContactScreenState extends State<AddContactScreen> with WidgetsBinding
     return PopScope(
       canPop: true,
       child: Scaffold(
-        appBar: TopToolbar(enableBack: true, toolbarTitle: getStrings().addContact),
+        appBar: TopToolbar(enableBack: true, toolbarTitle: "Add Contact"),
         resizeToAvoidBottomInset: false,
         body: SafeArea(
           child: Padding(
@@ -87,8 +87,8 @@ class _AddContactScreenState extends State<AddContactScreen> with WidgetsBinding
                         return Container();
                       }
                       if (state.userList!.isEmpty) {
-                        return Center(
-                          child: Text(getStrings().searchByHintText),
+                        return const Center(
+                          child: Text("Search contact by username or email"),
                         );
                       }
                       if (state.status == SearchContactStatus.loading) {
@@ -111,9 +111,10 @@ class _AddContactScreenState extends State<AddContactScreen> with WidgetsBinding
 
                                   if (contactExist) {
                                     if (mounted) {
-                                      AppConstants.showToast(context, getStrings().contactAlreadyAddedText);
+                                      AppConstants.showToast(context, "Contact already added");
                                     }
                                   } else {
+
                                     bool success = await getSearchContactCubit().addContact(
                                         context,
                                         userContact: e,

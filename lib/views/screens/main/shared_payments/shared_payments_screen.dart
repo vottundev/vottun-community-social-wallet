@@ -51,7 +51,7 @@ class _SharedPaymentsScreenState extends State<SharedPaymentsScreen> with Widget
                     return Expanded(
                         child: Center(
                             child: Text(
-                      getStrings().emptySchedulePayment,
+                      "Not created any shared payment yet! :(",
                       style: context.bodyTextMedium.copyWith(fontSize: 18),
                     )));
                   }
@@ -105,7 +105,7 @@ class _SharedPaymentsScreenState extends State<SharedPaymentsScreen> with Widget
                   children: [
                     Expanded(
                       child: CustomButton(
-                        buttonText: getStrings().createSchedulePaymentText,
+                        buttonText: "Create Shared Payment",
                         radius: 10,
                         elevation: 1,
                         backgroundColor: Colors.green,
@@ -115,7 +115,7 @@ class _SharedPaymentsScreenState extends State<SharedPaymentsScreen> with Widget
                               context: context,
                               isScrollControlled: false,
                               body: SelectContactsBottomDialog(
-                                  title: getStrings().selectRecipientText,
+                                  title: "Select recipient",
                                   onClickContact: (userId, contactName, userAddress) {
                                     if (userId != 0 && userAddress != null) {
                                       AppConstants.showBottomDialog(
@@ -138,7 +138,7 @@ class _SharedPaymentsScreenState extends State<SharedPaymentsScreen> with Widget
                   children: [
                     Expanded(
                       child: CustomButton(
-                        buttonText: getStrings().requestSharedPaymentText,
+                        buttonText: "Request Shared Payment",
                         radius: 10,
                         elevation: 1,
                         padding: const EdgeInsets.symmetric(vertical: 10),

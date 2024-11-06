@@ -25,7 +25,7 @@ class _ConfigurationScreenState extends State<ConfigurationScreen> with WidgetsB
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: TopToolbar(enableBack: true, toolbarTitle: getStrings().configurationText),
+      appBar: TopToolbar(enableBack: true, toolbarTitle: "Configuration"),
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
@@ -42,7 +42,7 @@ class _ConfigurationScreenState extends State<ConfigurationScreen> with WidgetsB
                         children: [
                           Expanded(
                               child: Text(
-                                getKeyValueStorage().getIsMainnetEnabled() ? getStrings().mainnetEnabledText : getStrings().testnetEnabledText,
+                                getKeyValueStorage().getIsMainnetEnabled() ? "Mainnet enabled" : "Testnet enabled",
                                 style: context.bodyTextMedium.copyWith(
                                     fontSize: 18,
                                     color: Colors.black,
@@ -61,18 +61,62 @@ class _ConfigurationScreenState extends State<ConfigurationScreen> with WidgetsB
                         ],
                       ),
                       const Divider(color: AppColors.appBackgroundColor),
+                      /*InkWell(
+                        onTap: () {},
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                  child: Text(
+                                    "Direct Payment History",
+                                    style: context.bodyTextMedium.copyWith(
+                                        fontSize: 18,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w500
+                                    ),
+                                  )
+                              ),
+                              Icon(Icons.arrow_forward_ios, color: Colors.black),
+                            ],
+                          ),
+                        ),
+                      ),
+                      const Divider(color: AppColors.appBackgroundColor),
+                      InkWell(
+                        onTap: () {
+
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Row(
+                            children: [
+                              Expanded(
+                                  child: Text(
+                                    "Shared Payment History",
+                                    style: context.bodyTextMedium.copyWith(
+                                        fontSize: 18,
+                                        color: Colors.black,
+                                        fontWeight: FontWeight.w500
+                                    ),
+                                  )
+                              ),
+                              Icon(Icons.arrow_forward_ios, color: Colors.black),
+                            ],
+                          ),
+                        ),
+                      ),*/
                     ],
                   );
                 },
               ),
               TextButton(
                   onPressed: () async {
-                    //getDirectPaymentCubit().resetValues();
                     await getKeyValueStorage().resetKeys();
                     AppRouter.pushNamed(RouteNames.LoginScreenRoute.name);
                   },
-                  child: Text(
-                      getStrings().logOutText
+                  child: const Text(
+                      "Log out"
                   )
               )
             ],

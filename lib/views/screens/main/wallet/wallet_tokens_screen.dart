@@ -1,6 +1,6 @@
+
 import 'package:flutter/material.dart';
 import 'package:social_wallet/views/widget/network_selector.dart';
-
 
 import '../../../../models/network_info_model.dart';
 
@@ -28,6 +28,8 @@ class _WalletTokensScreenState extends State<WalletTokensScreen>
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: NetworkSelector(
+            selectedNetworkInfoModel: widget.selectedNetwork,
+            showMakePaymentText: false,
             onClickNetwork: (selectedValue) {
               widget.selectedNetwork = selectedValue;
             },

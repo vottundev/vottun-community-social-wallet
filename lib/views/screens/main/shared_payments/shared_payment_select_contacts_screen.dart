@@ -93,7 +93,7 @@ class _SharedPaymentSelectContactsScreenState
                             children: [
                               Expanded(
                                   child: Text(
-                                "${getStrings().totalAmountText}: ${(state.totalAmount ?? 0.0).toStringAsFixed(AppConstants.getNumDecimalsAfterPoint(state.totalAmount ?? 0.0))}",
+                                "Total amount: ${(state.totalAmount ?? 0.0).toStringAsFixed(AppConstants.getNumDecimalsAfterPoint(state.totalAmount ?? 0.0))}",
                                 style: context.bodyTextMedium
                                     .copyWith(fontSize: 18),
                               ))
@@ -103,7 +103,7 @@ class _SharedPaymentSelectContactsScreenState
                             children: [
                               Expanded(
                                   child: Text(
-                                "${getStrings().pendingAmountText}: $pendingAmount",
+                                "Pending amount: $pendingAmount",
                                 style: context.bodyTextMedium
                                     .copyWith(fontSize: 18),
                               ))
@@ -120,7 +120,7 @@ class _SharedPaymentSelectContactsScreenState
                         children: [
                           Expanded(
                             child: CustomButton(
-                              buttonText: getStrings().addUserText,
+                              buttonText: "Add User",
                               radius: 15,
                               elevation: 5,
                               backgroundColor: AppColors.lightPrimaryColor,
@@ -156,7 +156,7 @@ class _SharedPaymentSelectContactsScreenState
                             children: [
                               Expanded(
                                 child: CustomButton(
-                                  buttonText: getStrings().addMyAmountText,
+                                  buttonText: "Add my Amount",
                                   radius: 15,
                                   elevation: 5,
                                   backgroundColor: AppColors.sendTagTextColor,
@@ -181,7 +181,7 @@ class _SharedPaymentSelectContactsScreenState
                         children: [
                           Expanded(
                             child: CustomButton(
-                              buttonText: getStrings().startPaymentText,
+                              buttonText: "Start Payment",
                               radius: 15,
                               elevation: 5,
                               padding: const EdgeInsets.symmetric(vertical: 10),
@@ -208,10 +208,10 @@ class _SharedPaymentSelectContactsScreenState
     Future.delayed(const Duration(milliseconds: 100), () async {
       List<String>? results = await AppConstants.showCustomTextInputDialog(
           context: context,
-          title: getStrings().totalAmountText,
-          message: getStrings().introTotalAmountToPayText,
-          okLabel: getStrings().proceedText,
-          cancelLabel: getStrings().cancelText,
+          title: "Total amount",
+          message: "Introduce total amount to pay",
+          okLabel: "Proceed",
+          cancelLabel: "Cancel",
           textFields: [
             const DialogTextField(
                 keyboardType: TextInputType.numberWithOptions(decimal: true)),
@@ -235,10 +235,10 @@ class _SharedPaymentSelectContactsScreenState
                 List<String>? resultsCurrUserAmount =
                 await AppConstants.showCustomTextInputDialog(
                     context: context,
-                    title: getStrings().yourAmountToPay,
-                    message: getStrings().introYourTotalAmountToPayText,
-                    okLabel: getStrings().proceedText,
-                    cancelLabel: getStrings().cancelText,
+                    title: "Your amount",
+                    message: "Introduce your total amount to pay",
+                    okLabel: "Proceed",
+                    cancelLabel: "Cancel",
                     barrierDismissible: false,
                     textFields: [
                       const DialogTextField(
@@ -261,7 +261,7 @@ class _SharedPaymentSelectContactsScreenState
             }
           } else {
             if (mounted) {
-              AppConstants.showToast(context, getStrings().totalAmountCannotBeEmptyMessage);
+              AppConstants.showToast(context, "Total amount cannot be empty");
             }
             AppRouter.pop();
           }
@@ -285,7 +285,7 @@ class _SharedPaymentSelectContactsScreenState
         }
         if (mounted) {
           AppConstants.showToast(
-              context, getStrings().exceededAmountOfWalletMessage);
+              context, "Exceeded amount of your wallet");
         }
       } else {
         widget.allSumAmount += currUserAmount;
@@ -325,10 +325,10 @@ class _SharedPaymentSelectContactsScreenState
     List<String>? resultsCurrUserAmount =
         await AppConstants.showCustomTextInputDialog(
             context: context,
-            title: getStrings().yourAmountToPay,
-            message: getStrings().introYourTotalAmountToPayText,
-            okLabel: getStrings().proceedText,
-            cancelLabel: getStrings().cancelText,
+            title: "Your amount",
+            message: "Introduce your total amount to pay",
+            okLabel: "Proceed",
+            cancelLabel: "Cancel",
             barrierDismissible: false,
             textFields: [
           const DialogTextField(
@@ -373,7 +373,7 @@ class _SharedPaymentSelectContactsScreenState
                     selectedContactsList: selectedContactsList);
                 AppRouter.pop();
               } else {
-                AppConstants.showToast(context, getStrings().commonErrorMessage);
+                AppConstants.showToast(context, "Something went wrong :(");
                 AppRouter.pop();
               }
             },
@@ -389,10 +389,10 @@ class _SharedPaymentSelectContactsScreenState
       List<SharedContactModel> selectedContactsList) async {
     List<String>? results = await AppConstants.showCustomTextInputDialog(
         context: context,
-        title: getStrings().amountForMessage(contactName),
-        message: getStrings().introAmountForMessage(contactName),
-        okLabel: getStrings().proceedText,
-        cancelLabel: getStrings().cancelText,
+        title: "Amount for $contactName",
+        message: "Introduce amount for $contactName",
+        okLabel: "Proceed",
+        cancelLabel: "Cancel",
         barrierDismissible: false,
         canPop: false,
         textFields: [

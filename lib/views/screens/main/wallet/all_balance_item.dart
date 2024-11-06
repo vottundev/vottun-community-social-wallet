@@ -85,7 +85,7 @@ class _AllBalanceItemState extends State<AllBalanceItem> with WidgetsBindingObse
                                     .copyWith(color: Colors.black, fontSize: 15),
                               ),
                               Text(
-                                "0\$",
+                                "0€",
                                 maxLines: 1,
                                 style: context.bodyTextMedium
                                     .copyWith(color: Colors.grey, fontSize: 14, overflow: TextOverflow.ellipsis),
@@ -155,7 +155,7 @@ class _AllBalanceItemState extends State<AllBalanceItem> with WidgetsBindingObse
                                                           fontSize: 15),
                                                 ),
                                                 Text(
-                                                  "0\$",
+                                                  "0€",
                                                   style: context.bodyTextMedium
                                                       .copyWith(
                                                           color: Colors.grey,

@@ -78,6 +78,7 @@ class _CreateWalletWebViewBottomDialogState extends State<CreateWalletWebViewBot
                   action: PermissionRequestResponseAction.GRANT);
             },
             shouldInterceptAjaxRequest: (controller, ajaxRequest) {
+              print(ajaxRequest);
               /*if (ajaxRequest.data != null) {
                 var ajaxProperties = jsonDecode(ajaxRequest.data)["properties"];
                 if (ajaxProperties != null) {

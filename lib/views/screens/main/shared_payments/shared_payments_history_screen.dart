@@ -10,6 +10,7 @@ import '../../../../di/injector.dart';
 import '../../../../models/db/user.dart';
 
 class SharedPaymentsHistoryScreen extends StatefulWidget {
+
   SharedPaymentsHistoryScreen({super.key}) {
     getSharedPaymentHistoryCubit().getUserSharedPayments();
   }
@@ -21,6 +22,7 @@ class SharedPaymentsHistoryScreen extends StatefulWidget {
 class _SharedPaymentsHistoryScreenState extends State<SharedPaymentsHistoryScreen> with WidgetsBindingObserver {
   @override
   void initState() {
+
     super.initState();
   }
 
@@ -47,7 +49,7 @@ class _SharedPaymentsHistoryScreenState extends State<SharedPaymentsHistoryScree
                     return Expanded(
                         child: Center(
                             child: Text(
-                      getStrings().emptySchedulePayment,
+                      "Not created any shared payment yet! :(",
                       style: context.bodyTextMedium.copyWith(fontSize: 18),
                     )));
                   }
@@ -60,34 +62,34 @@ class _SharedPaymentsHistoryScreenState extends State<SharedPaymentsHistoryScree
                           onRefresh: () async {
                             getSharedPaymentHistoryCubit().getUserSharedPayments();
                           },
-                          child: ListView(
-                              children: state.sharedPaymentResponseModel!.map((e) {
-                            String currUserEmail = getKeyValueStorage().getCurrentUser()?.userEmail ?? "";
-                            return SharedPaymentItem(
-                              element: e,
-                              isOwner: e.sharedPayment.ownerEmail == currUserEmail,
-                              onClickItem: (sharedPayInfo) async {
-                                User? currUser = AppConstants.getCurrentUser();
+                          child: ListView(children: state.sharedPaymentResponseModel!.map((e) {
+                              String currUserEmail = getKeyValueStorage().getCurrentUser()?.userEmail ?? "";
+                              return SharedPaymentItem(
+                                element: e,
+                                isOwner: e.sharedPayment.ownerEmail == currUserEmail,
+                                onClickItem: (sharedPayInfo) async {
+                                  User? currUser = AppConstants.getCurrentUser();
 
-                                if (currUser != null && mounted) {
-                                  AppConstants.showBottomDialog(
-                                      context: context,
-                                      isScrollControlled: true,
-                                      body: SharedPaymentDetailsBottomDialog(
-                                        sharedPaymentResponseModel: e,
-                                        currUser: currUser,
-                                        // txResponse: txStatusResponseModel,
-                                        isOwner: e.sharedPayment.ownerId == currUser.id,
-                                        onBackFromCreateDialog: () {
-                                          getSharedPaymentHistoryCubit().getUserSharedPayments();
-                                        },
-                                      ));
-                                }
-                              },
-                            );
-                          }).toList()),
+                                  if (currUser != null && mounted) {
+                                    AppConstants.showBottomDialog(
+                                        context: context,
+                                        isScrollControlled: true,
+                                        body: SharedPaymentDetailsBottomDialog(
+                                          sharedPaymentResponseModel: e,
+                                          currUser: currUser,
+                                          // txResponse: txStatusResponseModel,
+                                          isOwner: e.sharedPayment.ownerId == currUser.id,
+                                          onBackFromCreateDialog: () {
+                                            getSharedPaymentHistoryCubit().getUserSharedPayments();
+                                          },
+                                        ));
+                                  }
+                                },
+                              );
+                            }).toList()),
+                          ),
                         ),
-                      ),
+
                     ],
                   ),
                 );
@@ -97,5 +99,10 @@ class _SharedPaymentsHistoryScreenState extends State<SharedPaymentsHistoryScree
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
   }
 }

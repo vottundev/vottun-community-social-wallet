@@ -57,7 +57,7 @@ class SharedPaymentItem extends StatelessWidget {
                     RichText(
                         textAlign: TextAlign.start,
                         text: TextSpan(
-                          text: "${getStrings().sharedPayBottomLabel} ${element.sharedPayment.id ?? 0}",
+                          text: "Shared payment ${element.sharedPayment.id ?? 0}",
                           style: context.bodyTextMedium,
                           children: [
                             TextSpan(
@@ -69,7 +69,7 @@ class SharedPaymentItem extends StatelessWidget {
                     ),
 
                     Text(
-                      "${getStrings().totalAmountText}: ${element.sharedPayment.totalAmount} ${element.sharedPayment.currencySymbol}",
+                      "Total amount: ${element.sharedPayment.totalAmount} ${element.sharedPayment.currencySymbol}",
                       textAlign: TextAlign.start,
                       maxLines: 2,
                       style: context.bodyTextMedium.copyWith(
@@ -81,7 +81,7 @@ class SharedPaymentItem extends StatelessWidget {
                   //todo if im not the owner
                   if (!isOwner) ...[
                     Text(
-                      "${getStrings().amountToPay}: ${element.sharedPaymentUser?.firstWhere((element) => element.userAddress == (getKeyValueStorage().getUserAddress() ?? "")).userAmountToPay} ${element.sharedPayment.currencySymbol}",
+                      "Amount to pay: ${element.sharedPaymentUser?.firstWhere((element) => element.userAddress == (getKeyValueStorage().getUserAddress() ?? "")).userAmountToPay} ${element.sharedPayment.currencySymbol}",
                       textAlign: TextAlign.start,
                       maxLines: 2,
                       style: context.bodyTextMedium.copyWith(

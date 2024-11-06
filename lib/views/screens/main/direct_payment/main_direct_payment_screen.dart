@@ -1,18 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:social_wallet/di/injector.dart';
 import 'package:social_wallet/utils/helpers/extensions/context_extensions.dart';
 import 'package:social_wallet/views/screens/main/direct_payment/direct_payment_history_screen.dart';
 import 'package:social_wallet/views/screens/main/direct_payment/direct_payment_screen.dart';
 
-import 'cubit/direct_payment_cubit.dart';
-
 
 class MainDirectPaymentScreen extends StatefulWidget {
 
-  late DirectPaymentCubit cubit;
-  MainDirectPaymentScreen({super.key}) {
-    cubit = getDirectPaymentCubit();
-  }
+
+  MainDirectPaymentScreen({super.key});
 
   @override
   _MainDirectPaymentScreenState createState() => _MainDirectPaymentScreenState();
@@ -23,6 +18,7 @@ class _MainDirectPaymentScreenState extends State<MainDirectPaymentScreen>
 
   @override
   void initState() {
+
     super.initState();
   }
 
@@ -42,16 +38,16 @@ class _MainDirectPaymentScreenState extends State<MainDirectPaymentScreen>
                     fontSize: 20
                   ),
                   indicatorSize: TabBarIndicatorSize.tab,
-                  tabs: [
-                    Tab(text: getStrings().dirPayLabel),
-                    Tab(text: getStrings().historyLabel)
+                  tabs: const [
+                    Tab(text: "DirPayment"),
+                    Tab(text: "History")
                   ]
               ),
               Expanded(
                 child: TabBarView(
-                  physics: const NeverScrollableScrollPhysics(),
+                  physics: NeverScrollableScrollPhysics(),
                     children: [
-                      DirectPaymentScreen(dirPayCubit: widget.cubit),
+                      DirectPaymentScreen(),
                       DirectPaymentHistoryScreen()
                     ]
                 ),
@@ -64,5 +60,27 @@ class _MainDirectPaymentScreenState extends State<MainDirectPaymentScreen>
   }
 
   @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
+  // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
+
+// @override
+// void didChangeAppLifecycleState(AppLifecycleState state) {
+//   switch (state) {
+//     case AppLifecycleState.resumed:
+//       setState(() {
+//       });
+//       break;
+//     case AppLifecycleState.inactive:
+//       break;
+//     case AppLifecycleState.paused:
+//       break;
+//     case AppLifecycleState.detached:
+//       break;
+//   }
+// }
 }

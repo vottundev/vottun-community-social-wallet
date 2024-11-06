@@ -27,6 +27,7 @@ class _DirectPaymentHistoryScreenState extends State<DirectPaymentHistoryScreen>
 
   @override
   Widget build(BuildContext context) {
+
     return BlocBuilder<DirPayHistoryCubit, DirPayHistoryState>(
       bloc: getDirPayHistoryCubit(),
       builder: (context, state) {
@@ -43,7 +44,7 @@ class _DirectPaymentHistoryScreenState extends State<DirectPaymentHistoryScreen>
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                getStrings().emptyDirectPaymentsMessage,
+                "You don't have any record yet :(",
                 style: context.bodyTextMedium.copyWith(
                   fontSize: 20
                 ),
@@ -90,13 +91,13 @@ class _DirectPaymentHistoryScreenState extends State<DirectPaymentHistoryScreen>
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Text(
-                                  "${getStrings().directPaymentText} ${e.id}",
+                                  "Direct payment ${e.id} ",
                                   textAlign: TextAlign.start,
                                   maxLines: 2,
                                   style: context.bodyTextMedium,
                                 ),
                                 Text(
-                                  "${getStrings().totalAmountText}: ${e.payedAmount.toString()} ${e.currencySymbol}",
+                                  "Total amount: ${e.payedAmount.toString()} ${e.currencySymbol}",
                                   textAlign: TextAlign.start,
                                   maxLines: 2,
                                   style: context.bodyTextMedium.copyWith(
@@ -120,4 +121,26 @@ class _DirectPaymentHistoryScreenState extends State<DirectPaymentHistoryScreen>
       },
     );
   }
+
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+// @override
+// void didChangeAppLifecycleState(AppLifecycleState state) {
+//   switch (state) {
+//     case AppLifecycleState.resumed:
+//       setState(() {
+//       });
+//       break;
+//     case AppLifecycleState.inactive:
+//       break;
+//     case AppLifecycleState.paused:
+//       break;
+//     case AppLifecycleState.detached:
+//       break;
+//   }
+// }
 }

@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:social_wallet/api/repositories/alchemy_repository.dart';
 import 'package:social_wallet/api/repositories/balance_repository.dart';
 import 'package:social_wallet/api/repositories/wallet_repository.dart';
 import 'package:social_wallet/models/created_wallet_response.dart';
@@ -19,12 +20,13 @@ class WalletCubit extends Cubit<WalletState> {
 
   BalanceRepository balanceRepository;
   WalletRepository walletRepository;
-
+  AlchemyRepository alchemyRepository;
   User? user = AppConstants.getCurrentUser();
 
   WalletCubit({
     required this.balanceRepository,
-    required this.walletRepository
+    required this.walletRepository,
+    required this.alchemyRepository
   }) : super(WalletState());
 
   Future<List<CustodiedWalletsInfoResponse>?> getCustomerCustiodedWallets() async {

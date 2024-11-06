@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:social_wallet/di/injector.dart';
 import 'package:social_wallet/views/screens/main/contacts/contacts_screen.dart';
 import 'package:social_wallet/views/screens/main/direct_payment/main_direct_payment_screen.dart';
 import 'package:social_wallet/views/screens/main/shared_payments/main_shared_payment_screen.dart';
@@ -15,14 +13,16 @@ class MainScreen extends StatefulWidget {
   _MainScreenState createState() => _MainScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> {
+class _MainScreenState extends State<MainScreen> with WidgetsBindingObserver {
   int pageIndex = 0;
   late PageController _pageController;
+
+  //bool isRegistered = getKeyValueStorage().getIsUserRegistered();
   PreferredSizeWidget? topToolbar;
 
   final bottomPages = [
-    MainDirectPaymentScreen(key: const PageStorageKey<String>('MainDirectPaymentScreen')),
-    const MainSharedPaymentScreen(key: PageStorageKey<String>('MainSharedPaymentScreen')),
+    MainDirectPaymentScreen(),
+    MainSharedPaymentScreen(),
     //WalletScreen(),
     ContactsScreen(),
   ];
@@ -74,25 +74,25 @@ class _MainScreenState extends State<MainScreen> {
           pageIndex = index;
         });
       },
-      items: <BottomNavigationBarItem>[
+      items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-            icon: const Icon(Icons.directions, color: AppColors.primaryColor),
-            label: getStrings().dirPayBottomLabel,
-            activeIcon:
-                const Icon(Icons.directions, color: AppColors.secondaryColor)),
+          icon: Icon(Icons.directions, color: AppColors.primaryColor),
+          label: 'Dir. Pay',
+            activeIcon: Icon(Icons.directions, color: AppColors.secondaryColor)
+        ),
         BottomNavigationBarItem(
-            icon: const Icon(Icons.share_outlined, color: AppColors.primaryColor),
-            label: getStrings().sharedPayBottomLabel,
+            icon: Icon(Icons.share_outlined, color: AppColors.primaryColor),
+            label: 'Shared Pay',
             activeIcon:
-                const Icon(Icons.share_outlined, color: AppColors.secondaryColor)),
-        /*BottomNavigationBarItem(
+                Icon(Icons.share_outlined, color: AppColors.secondaryColor)),
+        /*   BottomNavigationBarItem(
           icon: Icon(Icons.wallet, color: AppColors.primaryColor),
           label: 'Wallet',
         ),*/
         BottomNavigationBarItem(
-            icon: const Icon(Icons.group, color: AppColors.primaryColor),
-            label: getStrings().contactsBottomLabel,
-            activeIcon: const Icon(Icons.group, color: AppColors.secondaryColor)),
+            icon: Icon(Icons.group, color: AppColors.primaryColor),
+            label: 'Contacts',
+            activeIcon: Icon(Icons.group, color: AppColors.secondaryColor)),
       ],
     );
   }

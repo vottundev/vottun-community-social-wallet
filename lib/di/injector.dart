@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter_appauth/flutter_appauth.dart';
 //import 'package:flutter_vottun/vottun.dart';
 import 'package:get_it/get_it.dart';
+import 'package:social_wallet/api/repositories/alchemy_repository.dart';
 import 'package:social_wallet/api/repositories/auth_repository.dart';
 import 'package:social_wallet/api/repositories/balance_repository.dart';
 import 'package:social_wallet/api/repositories/wallet_repository.dart';
@@ -62,6 +63,7 @@ void registerDependencyInjection() {
   _registerDirectPaymentCubit();
   _registerEndSharedPaymentCubit();
   _registerSharedPaymentCubit();
+  _registerAlchemyRepository();
   _registerDirPayHistoryCubit();
   _registerSharedPaymentItemCubit();
   _registerSendVerificationCodeCubit();
@@ -73,12 +75,12 @@ void registerDependencyInjection() {
   _registerDeployedContractsCubit();
   _registerSharedPaymentHistoryCubit();
   _registerAuthCubit();
-  _registerGetStrings();
 }
 
-void testingVottunSDK() {
- // Vottun vottun = Vottun("", "");
-}
+
+// void testingVottunSDK() {
+//   Vottun vottun = Vottun("", "");
+// }
 
 FlutterAppAuth getFlutterAppAuth() {
   return getIt<FlutterAppAuth>();
@@ -87,9 +89,6 @@ AppLocalization getStrings() {
   return getIt<AppLocalization>();
 }
 
-void _registerGetStrings() {
-  getIt.registerLazySingleton<AppLocalization>(() => AppLocalization());
-}
 void _registerApiCallService() {
   getIt.registerLazySingleton<ApiService>(() => ApiService(getDioService(), getFlutterAppAuth()));
 }
@@ -167,7 +166,7 @@ WalletCubit getWalletCubit() {
 }
 
 void _registerWalletCubit() {
-  getIt.registerLazySingleton<WalletCubit>(() => WalletCubit(balanceRepository: getBalanceRepository(),  walletRepository: getWalletRepository(), ));
+  getIt.registerLazySingleton<WalletCubit>(() => WalletCubit(balanceRepository: getBalanceRepository(),  walletRepository: getWalletRepository(), alchemyRepository: getAlchemyRepository()));
 }
 
 WalletNFTsCubit getWalletNFTsCubit() {
@@ -175,7 +174,7 @@ WalletNFTsCubit getWalletNFTsCubit() {
 }
 
 void _registerWalletNFTsCubit() {
-  getIt.registerLazySingleton<WalletNFTsCubit>(() => WalletNFTsCubit(balanceRepository: getBalanceRepository(),  walletRepository: getWalletRepository()));
+  getIt.registerLazySingleton<WalletNFTsCubit>(() => WalletNFTsCubit(balanceRepository: getBalanceRepository(),  walletRepository: getWalletRepository(), alchemyRepository: getAlchemyRepository()));
 }
 
 
@@ -184,7 +183,7 @@ BalanceCubit getBalanceCubit() {
 }
 
 void _registerBalanceCubit() {
-  getIt.registerLazySingleton<BalanceCubit>(() => BalanceCubit(balanceRepository: getBalanceRepository()));
+  getIt.registerFactory<BalanceCubit>(() => BalanceCubit(balanceRepository: getBalanceRepository(), alchemyRepository: getAlchemyRepository()));
 }
 
 NetworkSelectorCubit getNetworkSelectorCubit() {
@@ -228,7 +227,7 @@ DirectPaymentCubit getDirectPaymentCubit() {
 }
 
 void _registerDirectPaymentCubit() {
-  getIt.registerFactory<DirectPaymentCubit>(() => DirectPaymentCubit(walletRepository: getWalletRepository()));
+  getIt.registerLazySingleton<DirectPaymentCubit>(() => DirectPaymentCubit(walletRepository: getWalletRepository()));
 }
 
 SendVerificationCodeCubit getSendVerificationCodeCubit() {
@@ -311,6 +310,13 @@ void _registerAuthCubit() {
   getIt.registerLazySingleton<AuthCubit>(() => AuthCubit());
 }
 
+AlchemyRepository getAlchemyRepository() {
+  return getIt<AlchemyRepository>();
+}
+
+void _registerAlchemyRepository() {
+  getIt.registerLazySingleton<AlchemyRepository>(() => AlchemyRepository(apiService: getApiService()));
+}
 
 AuthRepository getAuthRepository() {
   return getIt<AuthRepository>();

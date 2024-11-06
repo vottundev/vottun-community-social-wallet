@@ -44,7 +44,7 @@ class _BalanceItemState extends State<BalanceItem> with WidgetsBindingObserver {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: tokenInfoListAux.map((e) => Material(
-            elevation: 0,
+            elevation: 1,
             child: InkWell(
               onTap: () {
                 if (widget.onClickToken != null) {
@@ -60,7 +60,7 @@ class _BalanceItemState extends State<BalanceItem> with WidgetsBindingObserver {
                       child: Row(
                         children: [
                           Image.asset(
-                              "assets/ic_vottun_token.png",
+                              "assets/ic_polygon.png",
                               height: 28,
                               width: 28),
                           const SizedBox(width: 5),
@@ -96,7 +96,7 @@ class _BalanceItemState extends State<BalanceItem> with WidgetsBindingObserver {
                                 fontSize: 15),
                           ),
                           Text(
-                            e.fiatPrice != 0.0 ? "${e.fiatPrice.toStringAsFixed(2)} \$" : "0\$",
+                            e.fiatPrice != 0.0 ? "${e.fiatPrice.toStringAsFixed(2)} €" : "0€",
                             maxLines: 1,
                             style: context.bodyTextMedium
                                 .copyWith(

@@ -52,18 +52,18 @@ class _OtpScreenState extends State<OtpScreen> with WidgetsBindingObserver {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                        getStrings().otpAuthenticationTitle,
+                        "OTP Authentication",
                         style: context.titleTextMediumW700.copyWith(
                           fontSize: 28
                         ),
                     ),
                     SizedBox(height: ContextUtils(context).screenHeight * 0.05),
                     CustomTextField(
-                      labelText: getStrings().otpCodeHint,
+                      labelText: AppConstants.getStrings(context).otpCodeHint,
                       controller: widget.otpCodeController,
                       inputStyle: context.bodyTextLarge,
                       keyboardType: TextInputType.text,
-                      floatingText: getStrings().otpCodeLabelText,
+                      floatingText: AppConstants.getStrings(context).otpCodeLabelText,
                       textInputAction: TextInputAction.next,
                       validator: FormValidator.emptyValidator,
                       onTap: () {},
@@ -100,7 +100,7 @@ class _OtpScreenState extends State<OtpScreen> with WidgetsBindingObserver {
         }
         return Expanded(
           child: CustomButton (
-            buttonText: getStrings().sendText,
+            buttonText: AppConstants.getStrings(context).sendText,
             radius: 15,
             elevation: 2,
             onTap: () async {
@@ -115,7 +115,7 @@ class _OtpScreenState extends State<OtpScreen> with WidgetsBindingObserver {
                 AppRouter.pushNamed(RouteNames.MainScreenRoute.name);
               } else {
                 if (mounted) {
-                  AppConstants.showToast(context, getStrings().incorrectOtpCodeMessage);
+                  AppConstants.showToast(context, "Incorrect OTP code");
                 }
               }
               loadingCubit.toggleState();

@@ -22,14 +22,7 @@ class NetworkSelector extends StatefulWidget {
   Function(NetworkInfoModel? networkInfoModel)? onClickNetwork;
   Function(TokensInfoModel tokensInfoModel)? onClickToken;
 
-  NetworkSelector(
-      {Key? key,
-      this.onClickToken,
-      this.selectedNetworkInfoModel,
-      this.showMakePaymentText,
-      this.showList,
-      this.onClickNetwork})
-      : super(key: key) {
+  NetworkSelector({Key? key, this.onClickToken, this.selectedNetworkInfoModel, this.showMakePaymentText, this.showList, this.onClickNetwork}) : super(key: key) {
     balanceCubit = getBalanceCubit();
     networkSelectorCubit = getNetworkSelectorCubit();
   }
@@ -40,24 +33,27 @@ class NetworkSelector extends StatefulWidget {
 
 class _NetworkSelectorState extends State<NetworkSelector> with AutomaticKeepAliveClientMixin<NetworkSelector> {
   @override
-  Widget build(BuildContext context) {
-    super.build(context);
+  void initState() {
     if (widget.selectedNetworkInfoModel != null) {
       if (widget.showList != null) {
         if (widget.showList == true) {
           widget.balanceCubit.getAccountBalance(
               accountToCheck: getKeyValueStorage().getUserAddress() ?? "",
               networkInfoModel: widget.selectedNetworkInfoModel!,
-              networkId: widget.selectedNetworkInfoModel?.id ?? 0);
+              networkId: widget.selectedNetworkInfoModel?.id ?? 0
+          );
         }
       }
     }
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     return BlocBuilder<NetworkCubit, BCNetworkState>(
       bloc: getNetworkCubit(),
       builder: (context, state) {
-        if (state.status == BCNetworksStatus.initial ||
-            state.status == BCNetworksStatus.loadingNetworks ||
-            state.availableNetworksList == null) {
+        if (state.status == BCNetworksStatus.initial || state.status == BCNetworksStatus.loadingNetworks || state.availableNetworksList == null) {
           return const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [CircularProgressIndicator()],
@@ -100,7 +96,7 @@ class _NetworkSelectorState extends State<NetworkSelector> with AutomaticKeepAli
                               ),
                               Expanded(
                                 child: Text(
-                                  selectedValue != null ? selectedValue.name : getStrings().selectNetworkText,
+                                  selectedValue != null ? selectedValue.name : "Select network",
                                   style: const TextStyle(
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
@@ -131,9 +127,7 @@ class _NetworkSelectorState extends State<NetworkSelector> with AutomaticKeepAli
                             networkInfoModel = networksInfoList.where((element) => element.name == value).firstOrNull;
                             if (networkInfoModel != null) {
                               widget.balanceCubit.getAccountBalance(
-                                  accountToCheck: getKeyValueStorage().getUserAddress() ?? "",
-                                  networkInfoModel: networkInfoModel,
-                                  networkId: networkInfoModel.id);
+                                  accountToCheck: getKeyValueStorage().getUserAddress() ?? "", networkInfoModel: networkInfoModel, networkId: networkInfoModel.id);
                               widget.networkSelectorCubit.setSelectedNetwork(selectedNetworkInfo: networkInfoModel);
                               widget.selectedNetworkInfoModel = networkInfoModel;
                               widget.onClickNetwork!(networkInfoModel);
@@ -162,10 +156,8 @@ class _NetworkSelectorState extends State<NetworkSelector> with AutomaticKeepAli
                               borderRadius: BorderRadius.circular(14),
                               color: AppColors.appBackgroundColor,
                             ),
-                            scrollbarTheme: ScrollbarThemeData(
-                                radius: const Radius.circular(40),
-                                thickness: MaterialStateProperty.all(6),
-                                thumbVisibility: MaterialStateProperty.all(true)),
+                            scrollbarTheme:
+                                ScrollbarThemeData(radius: const Radius.circular(40), thickness: MaterialStateProperty.all(6), thumbVisibility: MaterialStateProperty.all(true)),
                           ),
                           menuItemStyleData: const MenuItemStyleData(
                             height: 40,
@@ -192,9 +184,6 @@ class _NetworkSelectorState extends State<NetworkSelector> with AutomaticKeepAli
                         child: CircularProgressIndicator(),
                       ));
                     case BalanceStatus.success:
-                      if (widget.selectedNetworkInfoModel == null) {
-                        return Container();
-                      }
                       return Expanded(
                         child: Column(
                           children: [
@@ -205,7 +194,7 @@ class _NetworkSelectorState extends State<NetworkSelector> with AutomaticKeepAli
                                 child: Row(
                                   children: [
                                     Text(
-                                      getStrings().selectCurrencyToDoPayment,
+                                      "Select currency to do the payment",
                                       style: context.bodyTextMedium.copyWith(fontSize: 18, fontWeight: FontWeight.w600),
                                     )
                                   ],
@@ -232,9 +221,9 @@ class _NetworkSelectorState extends State<NetworkSelector> with AutomaticKeepAli
                         ),
                       );
                     case BalanceStatus.error:
-                      return Expanded(
+                      return const Expanded(
                           child: Center(
-                        child: Text(getStrings().errorText),
+                        child: Text("Error"),
                       ));
                   }
                   return const Column(
@@ -250,5 +239,6 @@ class _NetworkSelectorState extends State<NetworkSelector> with AutomaticKeepAli
   }
 
   @override
+  // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
 }

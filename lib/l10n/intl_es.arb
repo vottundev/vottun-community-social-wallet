@@ -1,17 +1,7 @@
 {
-  "@@last_modified": "2024-06-07T13:20:18.654763",
-  "socialWalletName": "SocialWallet",
-  "@socialWalletName": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "loginText": "Sign In",
+  "@@last_modified": "2024-11-06T10:26:09.329074",
+  "loginText": "Iniciar sesión",
   "@loginText": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "signUpText": "Sign Up",
-  "@signUpText": {
     "type": "text",
     "placeholders": {}
   },
@@ -25,12 +15,12 @@
     "type": "text",
     "placeholders": {}
   },
-  "emailTextInstructions": "Your email",
+  "emailTextInstructions": "Introduce tu email",
   "@emailTextInstructions": {
     "type": "text",
     "placeholders": {}
   },
-  "passwordText": "Password",
+  "passwordText": "Contraseña",
   "@passwordText": {
     "type": "text",
     "placeholders": {}
@@ -40,299 +30,415 @@
     "type": "text",
     "placeholders": {}
   },
-  "otpCodeHint": "Write OTP code",
+  "otpCodeHint": "Introduce el código OTP",
   "@otpCodeHint": {
     "type": "text",
     "placeholders": {}
   },
-  "passwordTextInstructions": "Your password",
+  "passwordTextInstructions": "Introduce tu contraseña",
   "@passwordTextInstructions": {
     "type": "text",
     "placeholders": {}
   },
-  "forgottenPassText": "¿Have you forget your password?",
+  "forgottenPassText": "¿Olvidaste tu contraseña?",
   "@forgottenPassText": {
     "type": "text",
     "placeholders": {}
   },
-  "exploreText": "Explorer",
+  "exploreText": "Explorar",
   "@exploreText": {
     "type": "text",
     "placeholders": {}
   },
-  "recoverPassTitle": "Recover your password.",
+  "appFundedByText": "Aplicación financiada por",
+  "@appFundedByText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "recoverPassTitle": "Recupera tu contraseña.",
   "@recoverPassTitle": {
     "type": "text",
     "placeholders": {}
   },
-  "incorrectCredentialsTitle": "Incorrect username or password",
+  "forgetPassInstructionsText": "A continuación, escribe la dirección de correo electrónico con la que te registraste en la APP y recibirás un mensaje con las instrucciones para recuperar la contraseña.",
+  "@forgetPassInstructionsText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "recoverPassInputText": "Escribe tu correo",
+  "@recoverPassInputText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "forgetPssSuccessMessageText": "Revisa tu correo electrónico. Te hemos enviado un enlace para recuperar tu contraseña. Revisa la carpeta Spam si no lo encuentras.",
+  "@forgetPssSuccessMessageText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "incorrectCredentialsTitle": "Credenciales incorrectas",
   "@incorrectCredentialsTitle": {
     "type": "text",
     "placeholders": {}
   },
-  "backText": "Back",
-  "@backText": {
+  "incorrectCredentialsText": "Credenciales incorrectas. Inténtalo de nuevo o ponte en contacto con tu sede para resolver la situación.",
+  "@incorrectCredentialsText": {
     "type": "text",
     "placeholders": {}
   },
-  "continueText": "Continue",
+  "homeText": "Inicio",
+  "@homeText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "chatText": "Chat",
+  "@chatText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "profileText": "Perfil",
+  "@profileText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "activeProfileText": "Perfil activo:",
+  "@activeProfileText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "actualityText": "Actualidad",
+  "@actualityText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "onBoardingTitle1": "Mensajería instantánea",
+  "@onBoardingTitle1": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "onBoardingText1": "Con el chat te conectarás directamente con tu persona de referencia de la FSG que te dará soporte y resolverá tus consultas de manera rápida y eficiente. Estamos aquí para ayudarte en todo momento. ¡Comencemos!",
+  "@onBoardingText1": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "onBoardingTitle2": "Gestiona tus citas",
+  "@onBoardingTitle2": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "onBoardingText2": "Podrás pedir cita con tu persona de referencia siempre que lo necesites. ¡Te contestaremos enseguida!",
+  "@onBoardingText2": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "onBoardingTitle3": "Te propondremos",
+  "@onBoardingTitle3": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "onBoardingText3": "Información personalizada sobre cursos, becas, actividades, datos de interés…ajustadas a tus necesidades.",
+  "@onBoardingText3": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "onBoardingTitle4": "Gestor de documentos ",
+  "@onBoardingTitle4": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "onBoardingText4": "Envía de forma fácil documentos y encuentra lo que necesitas rápidamente. ¡Comienza a gestionar tus documentos de manera eficiente con tu persona de referencia de la FSG!",
+  "@onBoardingText4": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "onBoardingTitle5": "Videollamadas",
+  "@onBoardingTitle5": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "onBoardingText5": "Si quieres hablar con tu persona de referencia por videollamada debes tener instalada en tu móvil la aplicación gratuita Microsoft TEAMS.",
+  "@onBoardingText5": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "onBoardingText5DownloadText": "Si no la tienes instalada pulsa aquí para descargarla.",
+  "@onBoardingText5DownloadText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "mainOnBoardingTitle": "Te damos la bienvenida",
+  "@mainOnBoardingTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "mainOnBoardingText": "Esta App es una nueva forma de comunicarte con la Fundación Secretariado Gitanos y te ayudará a mantenerte informado de todo lo que pasa en la fundación.",
+  "@mainOnBoardingText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "startButtonText": "Empezar",
+  "@startButtonText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "weProposeText": "Te proponemos",
+  "@weProposeText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pendingTasksText": "Tareas pendientes",
+  "@pendingTasksText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "appointmentsText": "Tus citas",
+  "@appointmentsText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "manageDocumentsText": "Gestor de documentos",
+  "@manageDocumentsText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "surveysText": "Encuestas",
+  "@surveysText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "interestedText": "Me interesa",
+  "@interestedText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "notInterestedText": "No me interesa",
+  "@notInterestedText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "moreInfoText": "+ info",
+  "@moreInfoText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "closeSessionWarningMessage": "¿Estás seguro de que quiere cerrar tu sesión?",
+  "@closeSessionWarningMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "yesText": "Sí",
+  "@yesText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "noText": "No",
+  "@noText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "helloText": "Hola",
+  "@helloText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "notRegisteredToolbarMessage": "Para ver todo el contenido debes registrarte. Ponte en contacto con tu técnico",
+  "@notRegisteredToolbarMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "byText": "Por",
+  "@byText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "continueText": "Continuar",
   "@continueText": {
     "type": "text",
     "placeholders": {}
   },
-  "cancelText": "Cancel",
-  "@cancelText": {
+  "backText": "Volver",
+  "@backText": {
     "type": "text",
     "placeholders": {}
   },
-  "commonErrorMessage": "Something went wrong. Thanks for your patience :)",
-  "@commonErrorMessage": {
+  "acceptButtonText": "Aceptar",
+  "@acceptButtonText": {
     "type": "text",
     "placeholders": {}
   },
-  "totalAmountText": "Total amount",
-  "@totalAmountText": {
+  "cancelButtonText": "Cancelar",
+  "@cancelButtonText": {
     "type": "text",
     "placeholders": {}
   },
-  "doneText": "Done",
-  "@doneText": {
+  "skipText": "Saltar",
+  "@skipText": {
     "type": "text",
     "placeholders": {}
   },
-  "selectNetworkText": "Select network",
-  "@selectNetworkText": {
+  "nextText": "Siguiente",
+  "@nextText": {
     "type": "text",
     "placeholders": {}
   },
-  "selectCurrencyToDoPayment": "Select currency to do the payment",
-  "@selectCurrencyToDoPayment": {
+  "writeYourMessageHere": "Escriba el mensaje aquí...",
+  "@writeYourMessageHere": {
     "type": "text",
     "placeholders": {}
   },
-  "dirPayBottomLabel": "Dir. Pay",
-  "@dirPayBottomLabel": {
+  "notTechAssignedText": "Sin técnico asignado",
+  "@notTechAssignedText": {
     "type": "text",
     "placeholders": {}
   },
-  "sharedPayBottomLabel": "Shared Pay",
-  "@sharedPayBottomLabel": {
+  "numPhoneText": "Nº teléfono",
+  "@numPhoneText": {
     "type": "text",
     "placeholders": {}
   },
-  "contactsBottomLabel": "Contacts",
-  "@contactsBottomLabel": {
+  "youHaveToRegisterChatMessage": "Tienes que registrarte para poder utilizar el chat, ponte en contacto con tu técnico asignado",
+  "@youHaveToRegisterChatMessage": {
     "type": "text",
     "placeholders": {}
   },
-  "dirPayLabel": "Dir. Payment",
-  "@dirPayLabel": {
+  "myProfileText": "Mi perfil",
+  "@myProfileText": {
     "type": "text",
     "placeholders": {}
   },
-  "historyLabel": "History",
-  "@historyLabel": {
+  "changePassText": "Cambiar contraseña",
+  "@changePassText": {
     "type": "text",
     "placeholders": {}
   },
-  "cryptoLabel": "Crypto",
-  "@cryptoLabel": {
+  "logoutText": "Cerrar sesión",
+  "@logoutText": {
     "type": "text",
     "placeholders": {}
   },
-  "amountToSentTitle": "Amount to sent",
-  "@amountToSentTitle": {
+  "notificationTitle": "Notificaciones",
+  "@notificationTitle": {
     "type": "text",
     "placeholders": {}
   },
-  "amountCannotBeZeroTitle": "Amount cannot be 0",
-  "@amountCannotBeZeroTitle": {
+  "notificationsEmptyMessage": "¡Estás al día! \n No tienes notificaciones pendientes.",
+  "@notificationsEmptyMessage": {
     "type": "text",
     "placeholders": {}
   },
-  "exceededWalletBalance": "Exceeded your wallet balance, please add funds",
-  "@exceededWalletBalance": {
+  "deleteNotiText": "Borrar",
+  "@deleteNotiText": {
     "type": "text",
     "placeholders": {}
   },
-  "createSchedulePaymentText": "Create Shared Payment",
-  "@createSchedulePaymentText": {
+  "personalDataText": "Datos personales",
+  "@personalDataText": {
     "type": "text",
     "placeholders": {}
   },
-  "": "Request Shared Payment",
-  "@requestSharedPaymentText": {
+  "editProfileText": "Editar",
+  "@editProfileText": {
     "type": "text",
     "placeholders": {}
   },
-  "selectRecipientText": "Select recipient",
-  "@selectRecipientText": {
+  "editPersonalDataText": "Editar datos personales",
+  "@editPersonalDataText": {
     "type": "text",
     "placeholders": {}
   },
-  "activeText": "Active",
-  "@activeText": {
+  "requestChangePersonalDataButtonText": "Solicitar cambio de datos personales",
+  "@requestChangePersonalDataButtonText": {
     "type": "text",
     "placeholders": {}
   },
-  "emptySchedulePayment": "Not created any shared payment yet! :(",
-  "@emptySchedulePayment": {
+  "programPortalIdText": "ID portal programa",
+  "@programPortalIdText": {
     "type": "text",
     "placeholders": {}
   },
-  "amountToPay": "Amount to pay",
-  "@amountToPay": {
+  "nameText": "Nombre",
+  "@nameText": {
     "type": "text",
     "placeholders": {}
   },
-  "txDetailsText": "Tx Details",
-  "@txDetailsText": {
+  "firstNameText": "Primer apellido",
+  "@firstNameText": {
     "type": "text",
     "placeholders": {}
   },
-  "statusText": "Status",
-  "@statusText": {
+  "secondNameText": "Segundo apellido",
+  "@secondNameText": {
     "type": "text",
     "placeholders": {}
   },
-  "youHavePayedText": "You have payed",
-  "@youHavePayedText": {
+  "idDocumentText": "Documento identificativo",
+  "@idDocumentText": {
     "type": "text",
     "placeholders": {}
   },
-  "numConfirmationsText": "Num confirmations",
-  "@numConfirmationsText": {
+  "referenceAssistantText": "Persona de referencia",
+  "@referenceAssistantText": {
     "type": "text",
     "placeholders": {}
   },
-  "totalRequiredConfirmations": "Total required confirmations",
-  "@totalRequiredConfirmations": {
+  "addMemberToFamilyText": "Añadir miembros de la unidad familiar",
+  "@addMemberToFamilyText": {
     "type": "text",
     "placeholders": {}
   },
-  "approveTransactionText": "Approve Transaction",
-  "@approveTransactionText": {
+  "changePassMessage": "Recuerda que esta contraseña te permite acceder a la aplicación y es personal e intransferible.  Puedes cambiarla en cualquier momento.",
+  "@changePassMessage": {
     "type": "text",
     "placeholders": {}
   },
-  "payText": "PAY",
-  "@payText": {
+  "currentPassText": "Contraseña actual",
+  "@currentPassText": {
     "type": "text",
     "placeholders": {}
   },
-  "executeTx": "Execute Tx",
-  "@executeTx": {
+  "newPassText": "Nueva contraseña",
+  "@newPassText": {
     "type": "text",
     "placeholders": {}
   },
-  "exceededTotalAmount": "Exceeded total amount",
-  "@exceededTotalAmount": {
+  "passRestrictionsText": "Mínimo 8 caracteres. Mínimo 1 letra mayúscula, 1 minúscula, 1 número y 1 carácter especial (¡-%&/_*+)",
+  "@passRestrictionsText": {
     "type": "text",
     "placeholders": {}
   },
-  "totalAmountCannotBeEmptyMessage": "Total amount cannot be empty",
-  "@totalAmountCannotBeEmptyMessage": {
+  "changePersonalDataRequestTitle": "Solicitud de cambio de datos personales",
+  "@changePersonalDataRequestTitle": {
     "type": "text",
     "placeholders": {}
   },
-  "pendingAmountText": "Pending amount",
-  "@pendingAmountText": {
+  "changePersonalDataRequestMessage": "Has notificado a tu persona de referencia los cambios en tus datos personales. ¡Los revisaremos y te informaremos!",
+  "@changePersonalDataRequestMessage": {
     "type": "text",
     "placeholders": {}
   },
-  "addUserText": "Add User",
-  "@addUserText": {
+  "resetPasswordText": "Restablecer contraseña",
+  "@resetPasswordText": {
     "type": "text",
     "placeholders": {}
   },
-  "addMyAmountText": "Add my amount",
-  "@addMyAmountText": {
+  "changedPasswordSuccessText": "Contraseña cambiada correctamente.",
+  "@changedPasswordSuccessText": {
     "type": "text",
     "placeholders": {}
   },
-  "startPaymentText": "Start Payment",
-  "@startPaymentText": {
+  "deleteNotificationTitle": "Borrar notificaciones",
+  "@deleteNotificationTitle": {
     "type": "text",
     "placeholders": {}
   },
-  "introTotalAmountToPayText": "Introduce total amount to pay",
-  "@introTotalAmountToPayText": {
+  "deleteNotificationMessage": "Aprende a limpiar tus notificaciones con un simple gesto hacia la izquierda.",
+  "@deleteNotificationMessage": {
     "type": "text",
     "placeholders": {}
   },
-  "proceedText": "Proceed",
-  "@proceedText": {
+  "understandText": "Entendido",
+  "@understandText": {
     "type": "text",
     "placeholders": {}
-  },
-  "introYourTotalAmountToPayText": "Introduce your total amount to pay",
-  "@introYourTotalAmountToPayText": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "yourAmountToPay": "Your amount",
-  "@yourAmountToPay": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "exceededAmountOfWalletMessage": "Exceeded amount of your wallet",
-  "@exceededAmountOfWalletMessage": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "networkText": "Network",
-  "@networkText": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "createText": "Create",
-  "@createText": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "twoFAValidationCodeText": "2FA Validation code",
-  "@twoFAValidationCodeText": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "sendVerificationCodeText": "Send Verification Code",
-  "@sendVerificationCodeText": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "otpEmailSendSuccessMessage": "Verification code sent to your email",
-  "@otpEmailSendSuccessMessage": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "otpValidationCodeText": "OTP Validation code",
-  "@otpValidationCodeText": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "resendText": "Resend",
-  "@resendText": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "singleUseCodeMessage": "Remember, this code is for single use only and is valid for 90 seconds.",
-  "@singleUseCodeMessage": {
-    "type": "text",
-    "placeholders": {}
-  },
-  "amountForMessage": "Amount for {contactName}",
-  "@amountForMessage": {
-    "type": "text",
-    "placeholders": {
-      "contactName": {}
-    }
-  },
-  "introAmountForMessage": "Introduce amount for{contactName}",
-  "@introAmountForMessage": {
-    "type": "text",
-    "placeholders": {
-      "contactName": {}
-    }
   },
   "requestPaymentToYouMessage": "{ownerUsername} has requested you to PAY {amountToPay} {currencySymbol} (x$). \n\nReason: {currencyName}",
   "@requestPaymentToYouMessage": {
@@ -354,33 +460,58 @@
       "currencyName": {}
     }
   },
-  "addContact": "Add Contact",
-  "@addContact": {
+  "pendingText": "Nuevas",
+  "@pendingText": {
     "type": "text",
     "placeholders": {}
   },
-  "searchByHintText": "Search contact by username or email",
-  "@searchByHintText": {
+  "requestsText": "Solicitadas",
+  "@requestsText": {
     "type": "text",
     "placeholders": {}
   },
-  "contactAlreadyAddedText": "Contact already added",
-  "@contactAlreadyAddedText": {
+  "seeDetailText": "Ver detalle",
+  "@seeDetailText": {
     "type": "text",
     "placeholders": {}
   },
-  "configurationText": "Configuration",
-  "@configurationText": {
+  "jobOfferDetailText": "Detalles oferta de trabajo",
+  "@jobOfferDetailText": {
     "type": "text",
     "placeholders": {}
   },
-  "mainnetEnabledText": "Mainnet enabled",
-  "@mainnetEnabledText": {
+  "maintenanceBossText": "Jefe de mantenimiento",
+  "@maintenanceBossText": {
     "type": "text",
     "placeholders": {}
   },
-  "testnetEnabledText": "Testnet enabled",
-  "@testnetEnabledText": {
+  "deleteText": "Eliminar",
+  "@deleteText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sendTagText": "Enviado",
+  "@sendTagText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pendingTagText": "Pendiente",
+  "@pendingTagText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emptyFormationsMessage": "¡Aún no te has inscrito a ninguna oferta / formación!",
+  "@emptyFormationsMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "pendingTaskListText": "Listado tareas pendientes",
+  "@pendingTaskListText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emptyPendingTasksMessage": "¡Genial, no tienes tareas pendientes!",
+  "@emptyPendingTasksMessage": {
     "type": "text",
     "placeholders": {}
   },
@@ -389,78 +520,223 @@
     "type": "text",
     "placeholders": {}
   },
-  "directPaymentText": "Direct payment",
-  "@directPaymentText": {
+  "requestedDocumentText": "Documentos pedidos",
+  "@requestedDocumentText": {
     "type": "text",
     "placeholders": {}
   },
-  "searchContacts": "Search in contacts",
-  "@searchContacts": {
+  "receivedDocumentText": "Documentos recibidos",
+  "@receivedDocumentText": {
     "type": "text",
     "placeholders": {}
   },
-  "createWalletFirstMessage": "Create a wallet first",
-  "@createWalletFirstMessage": {
+  "documentDetailText": "Detalle documento solicitado",
+  "@documentDetailText": {
     "type": "text",
     "placeholders": {}
   },
-  "selectNetworkFirstMessage": "Select a network first",
-  "@selectNetworkFirstMessage": {
+  "stateText": "Estado",
+  "@stateText": {
     "type": "text",
     "placeholders": {}
   },
-  "selectContactMessage": "Select a contact first",
-  "@selectContactMessage": {
+  "uploadFileInstructionsText": "Busque y elija los archivos que desea enviar a tu técnico. (JPG, DOC, PDF). Tamaño máximo: 100 MB",
+  "@uploadFileInstructionsText": {
     "type": "text",
     "placeholders": {}
   },
-  "emptyDirectPaymentsMessage": "You don't have any record yet :(",
-  "@emptyDirectPaymentsMessage": {
+  "downloadFileText": "Descargar archivo",
+  "@downloadFileText": {
     "type": "text",
     "placeholders": {}
   },
-  "amountToSendSuccessMessage": "Amount send it!",
-  "@amountToSendSuccessMessage": {
+  "confirmSendText": "Confirmar envío",
+  "@confirmSendText": {
     "type": "text",
     "placeholders": {}
   },
-  "otpAuthenticationTitle": "OTP Authentication",
-  "@otpAuthenticationTitle": {
+  "uploadProfilePhotoText": "Busque y suba la fotografía de perfil\n(JPG y JPEG)",
+  "@uploadProfilePhotoText": {
     "type": "text",
     "placeholders": {}
   },
-  "incorrectOtpCodeMessage": "Incorrect OTP code",
-  "@incorrectOtpCodeMessage": {
+  "addFileButtonText": "Añadir archivo",
+  "@addFileButtonText": {
     "type": "text",
     "placeholders": {}
   },
-  "otpVerificationText": "OTP Verification",
-  "@otpVerificationText": {
+  "uploadFileText": "Subir archivo",
+  "@uploadFileText": {
     "type": "text",
     "placeholders": {}
   },
-  "requestedToText": "Requested to",
-  "@requestedToText": {
+  "uploadFileAgainText": "Subir archivo de nuevo",
+  "@uploadFileAgainText": {
     "type": "text",
     "placeholders": {}
   },
-  "requestedAmountToText": "Requested amount",
-  "@requestedAmountToText": {
+  "uploadedFileText": "Archivo subido",
+  "@uploadedFileText": {
     "type": "text",
     "placeholders": {}
   },
-  "yourContactsText": "Your contacts",
-  "@yourContactsText": {
+  "emptyDocumentsMessage": "¡Te damos la bienvenida! Aquí encontrarás toda la documentación requerida por tu técnico.",
+  "@emptyDocumentsMessage": {
     "type": "text",
     "placeholders": {}
   },
-  "sendText": "Send",
+  "yourSurveysText": "Tus encuestas",
+  "@yourSurveysText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "answerText": "Responder",
+  "@answerText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emptySurveysText": "¡Esperando nuevas encuestas!\n¡Sé paciente y prepara tus respuestas!",
+  "@emptySurveysText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "yourNextAppointmentsText": "Tus próximas citas",
+  "@yourNextAppointmentsText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addAppointmentText": "Agendar nueva cita",
+  "@addAppointmentText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "addAppointmentTitleText": "Agendar cita",
+  "@addAppointmentTitleText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "confirmedTagText": "Confirmado",
+  "@confirmedTagText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "rejectedTagText": "Rechazada",
+  "@rejectedTagText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "rescheduleTagText": "Reprogramada",
+  "@rescheduleTagText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "chooseModalityText": "Elegir modalidad",
+  "@chooseModalityText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "onSiteText": "Presencial",
+  "@onSiteText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "phoneText": "Teléfono",
+  "@phoneText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "videocallText": "Videollamada",
+  "@videocallText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "availableDateText": "Elige una fecha",
+  "@availableDateText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "timeAvailableText": "Elige un horario",
+  "@timeAvailableText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "appointmentReasonTitle": "Quieres la cita para...",
+  "@appointmentReasonTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "appointmentReasonHintText": "ayúdanos a preparar tu cita, cuéntanos qué necesitas...",
+  "@appointmentReasonHintText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sendAppointmentRequestText": "Enviar solicitud",
+  "@sendAppointmentRequestText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "sendText": "Enviar",
   "@sendText": {
     "type": "text",
     "placeholders": {}
   },
-  "emptyContactsMessage": "You don't have contacts, add new contact to start doing payments!",
-  "@emptyContactsMessage": {
+  "appointRequestSendDialogTitle": "Solicitud de cita enviada",
+  "@appointRequestSendDialogTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "appointRequestSendDialogMessage": "Hemos enviado a tu técnico la solicitud de cita. Te notificaremos a través de la app el estado de tu solicitud lo antes posible.",
+  "@appointRequestSendDialogMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "seeMyAppointmentsText": "Ver mis citas",
+  "@seeMyAppointmentsText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "videocallServiceText": "Servicio videollamadas",
+  "@videocallServiceText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "videocallServiceMessage": "Si quieres hablar con tu persona de referencia por videollamada debes tener instalada en tu móvil la aplicación gratuita Microsoft TEAMS. Si no la tienes instalada pulsa aquí para descargarla.",
+  "@videocallServiceMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "reasonBaseMessage1": "Porfavor, ¿podemos tener una cita el próximo ",
+  "@reasonBaseMessage1": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "ofText": "entre las ",
+  "@ofText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "onModalityText": "Modalidad: ",
+  "@onModalityText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "thanksText": "¡Gracias!",
+  "@thanksText": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "appointmentSummaryTitle": "Resumen de tu cita",
+  "@appointmentSummaryTitle": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "emptyAppointmentsMessage": "¡No tienes ninguna cita pendiente!",
+  "@emptyAppointmentsMessage": {
+    "type": "text",
+    "placeholders": {}
+  },
+  "notShowAgainText": "No volver a mostrar",
+  "@notShowAgainText": {
     "type": "text",
     "placeholders": {}
   },

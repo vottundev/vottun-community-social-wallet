@@ -71,7 +71,7 @@ class DirectPaymentBottomDialogCubit extends Cubit<DirectPaymentBottomDialogStat
               currencySymbol: tokenInfoModel.tokenSymbol));
 
           if (savedResponse != null) {
-            AppConstants.showToast(context, getStrings().amountToSendSuccessMessage);
+            AppConstants.showToast(context, "Amount send it!");
             AppRouter.pop();
           }
         }

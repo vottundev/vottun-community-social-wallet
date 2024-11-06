@@ -17,12 +17,13 @@ class SharedPaymentContactsCubit extends Cubit<SharedPaymentContactsState> {
   SharedPaymentContactsCubit() : super(SharedPaymentContactsState());
 
   Future<int?> initTx(
-      {required SharedPayment sharedPayment, required List<String> userAddressList, required String pin}) async {
+      {required SharedPayment sharedPayment,
+      required List<String> userAddressList,
+      required String pin}) async {
     try {
       int? sharedPaymentCurrId = await getTxCounts(sharedPayment.networkId);
 
       if (sharedPaymentCurrId != null) {
-        //TODO when total amount under 1: example => 0.9 or 0.89.... will be 0 if use .toInt()
         var params = sharedPayment.currencyAddress == null
             ? [
                 sharedPayment.ownerAddress,
@@ -44,18 +45,21 @@ class SharedPaymentContactsCubit extends Cubit<SharedPaymentContactsState> {
                 userAddressList.length
               ];
         sharedPaymentCurrId += 1;
-        SendTxResponseModel? sendTxResponseModel = await submitTxReq(SendTxRequestModel(
-            sender: getKeyValueStorage().getUserAddress() ?? "",
-            blockchainNetwork: sharedPayment.networkId,
-            contractSpecsId: ConfigProps.contractSpecsId,
-            gasLimit: 250000,
-            method: sharedPayment.currencyAddress == null ? "initNativeTransaction" : "initTransaction",
-            value: sharedPayment.currencyAddress == null ? AppConstants.toWei(sharedPayment.totalAmount, 18): "0",
-            params: params,
-            pin: pin));
+        SendTxResponseModel? sendTxResponseModel = await submitTxReq(
+            SendTxRequestModel(
+                sender: getKeyValueStorage().getUserAddress() ?? "",
+                blockchainNetwork: sharedPayment.networkId,
+                contractSpecsId: ConfigProps.contractSpecsId,
+                method: sharedPayment.currencyAddress == null
+                    ? "initNativeTransaction"
+                    : "initTransaction",
+                value: 0,
+                params: params,
+                pin: pin));
         if (sendTxResponseModel != null) {
-          SharedPayment spAux =
-              sharedPayment.copyWith(id: sharedPaymentCurrId, numConfirmations: userAddressList.length);
+          SharedPayment spAux = sharedPayment.copyWith(
+              id: sharedPaymentCurrId,
+              numConfirmations: userAddressList.length);
           //todo pass to cubit
           int? entityId = await getDbHelper().createSharedPayment(spAux);
           if (entityId != null) {
@@ -87,11 +91,13 @@ class SharedPaymentContactsCubit extends Cubit<SharedPaymentContactsState> {
             userAddress: element.userAddress,
             userAmountToPay: element.amountToPay));
       }
-      int? result = await getDbHelper().insertSharedPaymentUser(sharedPaymentUsers);
+      int? result =
+          await getDbHelper().insertSharedPaymentUser(sharedPaymentUsers);
       if (result == null) {
         //delete created shared payment
         //todo delete shared payments users too
-        int? result = await getDbHelper().deleteSharedPayment(entityId, sharedPayment.ownerId);
+        int? result = await getDbHelper()
+            .deleteSharedPayment(entityId, sharedPayment.ownerId);
         return result;
       }
       return result;
@@ -101,15 +107,19 @@ class SharedPaymentContactsCubit extends Cubit<SharedPaymentContactsState> {
     }
   }
 
-  Future<SendTxResponseModel?> submitTxReq(SendTxRequestModel sendTxRequestModel) async {
+  Future<SendTxResponseModel?> submitTxReq(
+      SendTxRequestModel sendTxRequestModel) async {
     try {
       User? currUser = AppConstants.getCurrentUser();
       if (currUser != null) {
         if (currUser.strategy != null) {
           if (currUser.strategy != 0) {
-            SendTxResponseModel? sendTxResponseModel = await getWalletRepository().sendTx(
-                reqBody: sendTxRequestModel.copyWith(contractAddress: ConfigProps.sharedPaymentCreatorAddress),
-                strategy: currUser.strategy!);
+            SendTxResponseModel? sendTxResponseModel =
+                await getWalletRepository().sendTx(
+                    reqBody: sendTxRequestModel.copyWith(
+                        contractAddress:
+                            ConfigProps.sharedPaymentCreatorAddress),
+                    strategy: currUser.strategy!);
 
             return sendTxResponseModel;
           }
@@ -124,10 +134,11 @@ class SharedPaymentContactsCubit extends Cubit<SharedPaymentContactsState> {
 
   Future<int?> getTxCounts(int blockchainNetwork) async {
     try {
-      List<dynamic>? response = await getWeb3CoreRepository().querySmartContract(SendTxRequestModel(
-          blockchainNetwork: blockchainNetwork,
-          contractAddress: ConfigProps.sharedPaymentCreatorAddress,
-          method: "getSharedPaymentCount"));
+      List<dynamic>? response = await getWeb3CoreRepository()
+          .querySmartContract(SendTxRequestModel(
+              blockchainNetwork: blockchainNetwork,
+              contractAddress: ConfigProps.sharedPaymentCreatorAddress,
+              method: "getSharedPaymentCount"));
 
       if (response != null) {
         if (response.first is int?) {
@@ -160,10 +171,11 @@ class SharedPaymentContactsCubit extends Cubit<SharedPaymentContactsState> {
         if (totalAmount > (sharedPayment.totalAmount)) {
           totalAmount = 0.0;
           if (context.mounted) {
-            AppConstants.showToast(context, getStrings().exceededTotalAmount);
+            AppConstants.showToast(context, "Exceeded total amount");
           }
         } else {
-          SharedContactModel sharedAux = sharedContactModel.copyWith(amountToPay: totalAmount);
+          SharedContactModel sharedAux =
+              sharedContactModel.copyWith(amountToPay: totalAmount);
           List<SharedContactModel> newList = List.empty(growable: true);
 
           for (var element in selectedContactsList) {
