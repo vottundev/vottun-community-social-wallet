@@ -1,6 +1,6 @@
 # Social Wallet
 
-### Flow Diagram
+### Current Flow Diagram
 ```mermaid
 graph TD
     A[Flutter App] --> B[Authentication]
