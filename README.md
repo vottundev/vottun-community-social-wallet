@@ -3,12 +3,12 @@
 ### Flow Diagram
 ```mermaid
 graph TD
-    A[Flutter App] --> B[Form Validation]
-    A --> C[IPFS Upload via Vottun]
-    C --> D[Metadata Creation]
-    D --> E[Smart Contract Mint]
-    E --> F[Transaction Confirmation]
-    F --> G[UI Update]
+    A[Flutter App] --> B[Authentication]
+    A --> C[DATABASE]
+    A --> D[APIs]
+    B --> E[Vottun OTP]
+    C --> F[SQLite (embedded in mobile)]
+    D --> G[Vottun API and Binance API]
 ```
 
 
