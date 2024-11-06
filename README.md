@@ -7,7 +7,7 @@ graph TD
     A --> C[DATABASE]
     A --> D[APIs]
     B --> E[Vottun OTP]
-    C --> F[SQLite (embedded in mobile)]
+    C --> F[SQLite embedded in mobile]
     D --> G[Vottun API and Binance API]
 ```
 
